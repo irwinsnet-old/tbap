@@ -1,0 +1,78 @@
+{
+  "alliance": {
+    "backup": null,
+    "name": "Alliance 3",
+    "number": 3,
+    "pick": 0
+  },
+  "alliance_status_str": "<b>Captain</b> of <b>Alliance 3</b>",
+  "last_match_key": "2017tur_f1m2",
+  "next_match_key": null,
+  "overall_status_str": "Team 1318 was <b>Rank 3/67</b> with a record of <b>8-2-0</b> in quals, competed in the playoffs as the <b>Captain</b> of <b>Alliance 3</b>, and <b>won the event</b> with a playoff record of <b>6-1-0</b>.",
+  "playoff": {
+    "current_level_record": {
+      "losses": 0,
+      "ties": 0,
+      "wins": 2
+    },
+    "level": "f",
+    "playoff_average": null,
+    "record": {
+      "losses": 1,
+      "ties": 0,
+      "wins": 6
+    },
+    "status": "won"
+  },
+  "playoff_status_str": "<b>Won the event</b> with a playoff record of <b>6-1-0</b>",
+  "qual": {
+    "num_teams": 67,
+    "ranking": {
+      "dq": 0,
+      "matches_played": 10,
+      "qual_average": null,
+      "rank": 3,
+      "record": {
+        "losses": 2,
+        "ties": 0,
+        "wins": 8
+      },
+      "sort_orders": [
+        2.2,
+        3080.0,
+        650.0,
+        1600.0,
+        1250.0,
+        40.0
+      ],
+      "team_key": "frc1318"
+    },
+    "sort_order_info": [
+      {
+        "name": "Ranking Score",
+        "precision": 2
+      },
+      {
+        "name": "Match Points",
+        "precision": 0
+      },
+      {
+        "name": "Auto",
+        "precision": 0
+      },
+      {
+        "name": "Rotor",
+        "precision": 0
+      },
+      {
+        "name": "Touchpad",
+        "precision": 0
+      },
+      {
+        "name": "Pressure",
+        "precision": 0
+      }
+    ],
+    "status": "completed"
+  }
+}

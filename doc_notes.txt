@@ -1,0 +1,15 @@
+### Start new sphinx project
+
+sphinx-quickstart
+
+
+
+### Create rst files using napoleon.
+
+sphinx-apidoc -f -o docs/source fapy
+
+
+
+### Create html documentation from rst files.
+
+make html

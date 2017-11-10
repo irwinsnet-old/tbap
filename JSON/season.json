@@ -1,0 +1,19 @@
+{
+  "eventCount": 181,
+  "gameName": "FIRST STEAMWORKS",
+  "kickoff": "2017-01-07T14:00:00Z",
+  "rookieStart": 6300,
+  "teamCount": 3372,
+  "FRCChampionships": [
+    {
+      "name": "FIRST Championship - Houston",
+      "startDate": "2017-04-19T00:00:00",
+      "location": "Houston, TX USA"
+    },
+    {
+      "name": "FIRST Championship - St. Louis",
+      "startDate": "2017-04-26T00:00:00",
+      "location": "St. Louis, MO USA"
+    }
+  ]
+}

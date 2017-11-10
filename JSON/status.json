@@ -1,0 +1,16 @@
+{
+  "android": {
+    "latest_app_version": 4020399,
+    "min_app_version": -1
+  },
+  "backup": {},
+  "contbuild_enabled": true,
+  "current_season": 2017,
+  "down_events": [],
+  "ios": {
+    "latest_app_version": -1,
+    "min_app_version": -1
+  },
+  "is_datafeed_down": false,
+  "max_season": 2018
+}

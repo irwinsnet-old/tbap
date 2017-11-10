@@ -1,0 +1,6660 @@
+{
+  "Schedule": [
+    {
+      "description": "Qualification 1",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 1,
+      "startTime": "2017-04-06T14:00:00",
+      "actualStartTime": "2017-04-06T13:55:15.3266667",
+      "postResultTime": "2017-04-06T13:58:02.4266667",
+      "scoreRedFinal": 317,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 285,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 15,
+      "Teams": [
+        {
+          "teamNumber": 2910,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 753,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 488,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4513,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5295,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4173,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 2",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 2,
+      "startTime": "2017-04-06T14:07:00",
+      "actualStartTime": "2017-04-06T14:06:55.8566667",
+      "postResultTime": "2017-04-06T14:09:42.29",
+      "scoreRedFinal": 306,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 22,
+      "scoreBlueFinal": 262,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 74,
+      "Teams": [
+        {
+          "teamNumber": 5975,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4915,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 957,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4911,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3219,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3693,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 3",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 3,
+      "startTime": "2017-04-06T14:14:00",
+      "actualStartTime": "2017-04-06T14:15:49.2633333",
+      "postResultTime": "2017-04-06T14:18:35.7533333",
+      "scoreRedFinal": 345,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 187,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 17,
+      "Teams": [
+        {
+          "teamNumber": 4469,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 948,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2928,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3393,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1294,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5803,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 4",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 4,
+      "startTime": "2017-04-06T14:21:00",
+      "actualStartTime": "2017-04-06T14:22:14.63",
+      "postResultTime": "2017-04-06T14:24:57",
+      "scoreRedFinal": 306,
+      "scoreRedFoul": 5,
+      "scoreRedAuto": 70,
+      "scoreBlueFinal": 207,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 3674,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4450,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6350,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5198,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2557,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2980,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 5",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 5,
+      "startTime": "2017-04-06T14:28:00",
+      "actualStartTime": "2017-04-06T14:28:54.0866667",
+      "postResultTime": "2017-04-06T14:31:42.1833333",
+      "scoreRedFinal": 250,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 70,
+      "scoreBlueFinal": 355,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 20,
+      "Teams": [
+        {
+          "teamNumber": 4131,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4061,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2147,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2811,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1425,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 997,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 6",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 6,
+      "startTime": "2017-04-06T14:35:00",
+      "actualStartTime": "2017-04-06T14:34:54.54",
+      "postResultTime": "2017-04-06T14:37:51.0233333",
+      "scoreRedFinal": 259,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 79,
+      "scoreBlueFinal": 300,
+      "scoreBlueFoul": 5,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 6445,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3711,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5920,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2550,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6343,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4488,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 7",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 7,
+      "startTime": "2017-04-06T14:42:00",
+      "actualStartTime": "2017-04-06T14:40:53",
+      "postResultTime": "2017-04-06T14:43:51.06",
+      "scoreRedFinal": 335,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 80,
+      "scoreBlueFinal": 295,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 4662,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5588,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2907,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2990,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4125,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2471,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 8",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 8,
+      "startTime": "2017-04-06T14:49:00",
+      "actualStartTime": "2017-04-06T14:47:24.3066667",
+      "postResultTime": "2017-04-06T14:50:12.09",
+      "scoreRedFinal": 310,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 76,
+      "scoreBlueFinal": 305,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 1540,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5827,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2046,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1595,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3223,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3024,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 9",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 9,
+      "startTime": "2017-04-06T14:56:00",
+      "actualStartTime": "2017-04-06T14:58:15.6133333",
+      "postResultTime": "2017-04-06T15:02:20.3766667",
+      "scoreRedFinal": 212,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 276,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 4918,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2374,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4495,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5085,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5468,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2521,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 10",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 10,
+      "startTime": "2017-04-06T15:03:00",
+      "actualStartTime": "2017-04-06T15:06:26.3933333",
+      "postResultTime": "2017-04-06T15:09:08.31",
+      "scoreRedFinal": 345,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 305,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 3238,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 955,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1778,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3663,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5450,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1318,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 11",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 11,
+      "startTime": "2017-04-06T15:10:00",
+      "actualStartTime": "2017-04-06T15:12:50.39",
+      "postResultTime": "2017-04-06T15:17:59.64",
+      "scoreRedFinal": 273,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 76,
+      "scoreBlueFinal": 297,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 77,
+      "Teams": [
+        {
+          "teamNumber": 4911,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2930,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5970,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2910,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3070,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 492,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 12",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 12,
+      "startTime": "2017-04-06T15:17:00",
+      "actualStartTime": "2017-04-06T18:53:52.33",
+      "postResultTime": "2017-04-06T18:56:39.7033333",
+      "scoreRedFinal": 266,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 282,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 77,
+      "Teams": [
+        {
+          "teamNumber": 4450,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2471,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2980,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 957,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2811,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5920,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 13",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 13,
+      "startTime": "2017-04-06T15:24:00",
+      "actualStartTime": "2017-04-06T19:00:27.19",
+      "postResultTime": "2017-04-06T19:03:18.2033333",
+      "scoreRedFinal": 238,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 18,
+      "scoreBlueFinal": 258,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 10,
+      "Teams": [
+        {
+          "teamNumber": 4173,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4662,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 948,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3674,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1540,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5975,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 14",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 14,
+      "startTime": "2017-04-06T15:31:00",
+      "actualStartTime": "2017-04-06T16:13:28.4933333",
+      "postResultTime": "2017-04-06T16:16:17.0866667",
+      "scoreRedFinal": 300,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 281,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 76,
+      "Teams": [
+        {
+          "teamNumber": 3024,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2550,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2928,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3219,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4131,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1595,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 15",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 15,
+      "startTime": "2017-04-06T15:38:00",
+      "actualStartTime": "2017-04-06T16:21:19.51",
+      "postResultTime": "2017-04-06T16:24:09.4",
+      "scoreRedFinal": 318,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 72,
+      "scoreBlueFinal": 330,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 3223,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2046,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4125,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2521,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3711,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4513,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 16",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 16,
+      "startTime": "2017-04-06T15:45:00",
+      "actualStartTime": "2017-04-06T16:29:12.0733333",
+      "postResultTime": "2017-04-06T16:31:56.31",
+      "scoreRedFinal": 312,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 400,
+      "scoreBlueFoul": 50,
+      "scoreBlueAuto": 72,
+      "Teams": [
+        {
+          "teamNumber": 6343,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5450,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4469,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5588,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2374,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 753,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 17",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 17,
+      "startTime": "2017-04-06T15:52:00",
+      "actualStartTime": "2017-04-06T16:35:20.7366667",
+      "postResultTime": "2017-04-06T16:39:08.57",
+      "scoreRedFinal": 256,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 76,
+      "scoreBlueFinal": 255,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 6445,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1318,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5970,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3693,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5085,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 997,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 18",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 18,
+      "startTime": "2017-04-06T15:59:00",
+      "actualStartTime": "2017-04-06T16:43:12.7833333",
+      "postResultTime": "2017-04-06T16:46:36.41",
+      "scoreRedFinal": 265,
+      "scoreRedFoul": 30,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 346,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 3393,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4495,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 955,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5803,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 492,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2557,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 19",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 19,
+      "startTime": "2017-04-06T16:06:00",
+      "actualStartTime": "2017-04-06T16:49:22.45",
+      "postResultTime": "2017-04-06T16:52:22.3766667",
+      "scoreRedFinal": 308,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 76,
+      "scoreBlueFinal": 149,
+      "scoreBlueFoul": 5,
+      "scoreBlueAuto": 81,
+      "Teams": [
+        {
+          "teamNumber": 5468,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4488,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3663,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1294,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 488,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4915,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 20",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 20,
+      "startTime": "2017-04-06T16:13:00",
+      "actualStartTime": "2017-04-06T16:56:42.9933333",
+      "postResultTime": "2017-04-06T16:59:38.2333333",
+      "scoreRedFinal": 305,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 352,
+      "scoreBlueFoul": 5,
+      "scoreBlueAuto": 77,
+      "Teams": [
+        {
+          "teamNumber": 4061,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5198,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3070,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5295,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2907,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3238,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 21",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 21,
+      "startTime": "2017-04-06T16:20:00",
+      "actualStartTime": "2017-04-06T17:02:50.7833333",
+      "postResultTime": "2017-04-06T17:05:46.62",
+      "scoreRedFinal": 274,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 80,
+      "scoreBlueFinal": 255,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 1778,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4918,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2990,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2930,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6350,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2147,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 22",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 22,
+      "startTime": "2017-04-06T16:27:00",
+      "actualStartTime": "2017-04-06T17:11:48.74",
+      "postResultTime": "2017-04-06T17:15:34.18",
+      "scoreRedFinal": 185,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 309,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 5827,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4173,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3693,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1425,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4469,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2980,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 23",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 23,
+      "startTime": "2017-04-06T16:34:00",
+      "actualStartTime": "2017-04-06T17:19:16.7433333",
+      "postResultTime": "2017-04-06T17:23:01.1233333",
+      "scoreRedFinal": 285,
+      "scoreRedFoul": 5,
+      "scoreRedAuto": 10,
+      "scoreBlueFinal": 208,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 13,
+      "Teams": [
+        {
+          "teamNumber": 5588,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2521,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": true
+        },
+        {
+          "teamNumber": 957,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4662,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1318,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5803,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 24",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 24,
+      "startTime": "2017-04-06T16:41:00",
+      "actualStartTime": "2017-04-06T17:26:14.9933333",
+      "postResultTime": "2017-04-06T17:30:26.73",
+      "scoreRedFinal": 307,
+      "scoreRedFoul": 10,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 208,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 77,
+      "Teams": [
+        {
+          "teamNumber": 3024,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 753,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4125,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 492,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3393,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4488,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 25",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 25,
+      "startTime": "2017-04-06T16:48:00",
+      "actualStartTime": "2017-04-06T17:33:06.7933333",
+      "postResultTime": "2017-04-06T17:35:53.6233333",
+      "scoreRedFinal": 320,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 10,
+      "scoreBlueFinal": 243,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 23,
+      "Teams": [
+        {
+          "teamNumber": 1294,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5198,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3663,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2910,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5970,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2811,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 26",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 26,
+      "startTime": "2017-04-06T16:55:00",
+      "actualStartTime": "2017-04-06T17:40:51.79",
+      "postResultTime": "2017-04-06T17:43:37.1566667",
+      "scoreRedFinal": 324,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 78,
+      "scoreBlueFinal": 345,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 2374,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1540,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4061,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1778,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4131,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2550,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 27",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 27,
+      "startTime": "2017-04-06T17:02:00",
+      "actualStartTime": "2017-04-06T17:47:11.4066667",
+      "postResultTime": "2017-04-06T17:50:09.2133333",
+      "scoreRedFinal": 345,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 372,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 77,
+      "Teams": [
+        {
+          "teamNumber": 5085,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2147,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4513,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1595,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3238,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6343,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 28",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 28,
+      "startTime": "2017-04-06T17:09:00",
+      "actualStartTime": "2017-04-06T18:01:56.39",
+      "postResultTime": "2017-04-06T18:04:40.43",
+      "scoreRedFinal": 258,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 77,
+      "scoreBlueFinal": 336,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 78,
+      "Teams": [
+        {
+          "teamNumber": 4915,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4450,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2907,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2046,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 948,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4918,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 29",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 29,
+      "startTime": "2017-04-06T17:16:00",
+      "actualStartTime": "2017-04-06T18:10:14.5",
+      "postResultTime": "2017-04-06T18:13:03.57",
+      "scoreRedFinal": 295,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 320,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 83,
+      "Teams": [
+        {
+          "teamNumber": 2471,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5975,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2557,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2990,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1425,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 488,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 30",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 30,
+      "startTime": "2017-04-06T17:23:00",
+      "actualStartTime": "2017-04-06T18:17:57.9366667",
+      "postResultTime": "2017-04-06T18:20:43.9266667",
+      "scoreRedFinal": 250,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 309,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 3070,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5450,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5920,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6350,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3223,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5468,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 31",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 31,
+      "startTime": "2017-04-06T17:30:00",
+      "actualStartTime": "2017-04-06T18:24:37.7533333",
+      "postResultTime": "2017-04-06T18:28:48.6933333",
+      "scoreRedFinal": 340,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 70,
+      "scoreBlueFinal": 280,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 20,
+      "Teams": [
+        {
+          "teamNumber": 3674,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6445,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 997,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4495,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4911,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2928,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 32",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 32,
+      "startTime": "2017-04-06T17:37:00",
+      "actualStartTime": "2017-04-06T18:31:54.4633333",
+      "postResultTime": "2017-04-06T18:35:23.4766667",
+      "scoreRedFinal": 288,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 280,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 3711,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5295,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 955,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5827,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2930,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3219,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 33",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 33,
+      "startTime": "2017-04-06T17:44:00",
+      "actualStartTime": "2017-04-06T18:39:16.3933333",
+      "postResultTime": "2017-04-06T18:42:21.51",
+      "scoreRedFinal": 300,
+      "scoreRedFoul": 5,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 210,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 22,
+      "Teams": [
+        {
+          "teamNumber": 1294,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4125,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5970,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2147,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4918,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4173,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 34",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 34,
+      "startTime": "2017-04-06T17:51:00",
+      "actualStartTime": "2017-04-06T18:46:08.3",
+      "postResultTime": "2017-04-06T18:49:52.1866667",
+      "scoreRedFinal": 215,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 276,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 81,
+      "Teams": [
+        {
+          "teamNumber": 1425,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2550,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2521,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2910,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4915,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4469,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 35",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 35,
+      "startTime": "2017-04-07T09:00:00",
+      "actualStartTime": "2017-04-07T09:15:44.0666667",
+      "postResultTime": "2017-04-07T09:18:33.3133333",
+      "scoreRedFinal": 295,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 256,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 4513,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5920,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 492,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 957,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5085,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1540,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 36",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 36,
+      "startTime": "2017-04-07T09:07:00",
+      "actualStartTime": "2017-04-07T09:21:54.3566667",
+      "postResultTime": "2017-04-07T09:24:55.7766667",
+      "scoreRedFinal": 301,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 81,
+      "scoreBlueFinal": 344,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 73,
+      "Teams": [
+        {
+          "teamNumber": 6343,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3674,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4662,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4488,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3024,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5450,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 37",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 37,
+      "startTime": "2017-04-07T09:14:00",
+      "actualStartTime": "2017-04-07T09:29:07.5466667",
+      "postResultTime": "2017-04-07T09:32:00.9233333",
+      "scoreRedFinal": 325,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 306,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 4131,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4495,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2046,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5827,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3070,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3663,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 38",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 38,
+      "startTime": "2017-04-07T09:21:00",
+      "actualStartTime": "2017-04-07T09:37:25.2933333",
+      "postResultTime": "2017-04-07T09:40:09.4666667",
+      "scoreRedFinal": 316,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 22,
+      "scoreBlueFinal": 312,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 72,
+      "Teams": [
+        {
+          "teamNumber": 6445,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2471,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 488,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 753,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1778,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5198,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 39",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 39,
+      "startTime": "2017-04-07T09:28:00",
+      "actualStartTime": "2017-04-07T09:44:07.51",
+      "postResultTime": "2017-04-07T09:46:52.3166667",
+      "scoreRedFinal": 250,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 70,
+      "scoreBlueFinal": 264,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 18,
+      "Teams": [
+        {
+          "teamNumber": 1595,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5588,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 997,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4450,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5295,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5468,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 40",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 40,
+      "startTime": "2017-04-07T09:35:00",
+      "actualStartTime": "2017-04-07T09:51:37.5133333",
+      "postResultTime": "2017-04-07T09:55:53.7966667",
+      "scoreRedFinal": 185,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 262,
+      "scoreBlueFoul": 5,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 5975,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1318,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2811,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3711,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2374,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2557,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 41",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 41,
+      "startTime": "2017-04-07T09:42:00",
+      "actualStartTime": "2017-04-07T09:59:01.3366667",
+      "postResultTime": "2017-04-07T10:02:10.9633333",
+      "scoreRedFinal": 310,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 330,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 6350,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4061,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4911,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3223,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3393,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 948,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 42",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 42,
+      "startTime": "2017-04-07T09:49:00",
+      "actualStartTime": "2017-04-07T10:10:42.68",
+      "postResultTime": "2017-04-07T10:14:29.6366667",
+      "scoreRedFinal": 250,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 70,
+      "scoreBlueFinal": 160,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 70,
+      "Teams": [
+        {
+          "teamNumber": 3219,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5803,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2980,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2930,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3693,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2907,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 43",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 43,
+      "startTime": "2017-04-07T09:56:00",
+      "actualStartTime": "2017-04-07T10:17:37.6366667",
+      "postResultTime": "2017-04-07T10:20:22.4333333",
+      "scoreRedFinal": 345,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 271,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 16,
+      "Teams": [
+        {
+          "teamNumber": 1540,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3238,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2990,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2928,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 955,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 957,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 44",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 44,
+      "startTime": "2017-04-07T10:03:00",
+      "actualStartTime": "2017-04-07T10:23:49.6066667",
+      "postResultTime": "2017-04-07T10:32:52.3833333",
+      "scoreRedFinal": 307,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 84,
+      "scoreBlueFinal": 325,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 15,
+      "Teams": [
+        {
+          "teamNumber": 4488,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2046,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4450,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5295,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5970,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2550,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 45",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 45,
+      "startTime": "2017-04-07T10:10:00",
+      "actualStartTime": "2017-04-07T10:36:23.6833333",
+      "postResultTime": "2017-04-07T10:39:07.9233333",
+      "scoreRedFinal": 285,
+      "scoreRedFoul": 5,
+      "scoreRedAuto": 80,
+      "scoreBlueFinal": 347,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 77,
+      "Teams": [
+        {
+          "teamNumber": 492,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5468,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4915,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2811,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5827,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2147,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 46",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 46,
+      "startTime": "2017-04-07T10:17:00",
+      "actualStartTime": "2017-04-07T10:43:11.3833333",
+      "postResultTime": "2017-04-07T10:47:13.4966667",
+      "scoreRedFinal": 256,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 150,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 70,
+      "Teams": [
+        {
+          "teamNumber": 948,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4911,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3024,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1318,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5920,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5198,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 47",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 47,
+      "startTime": "2017-04-07T10:24:00",
+      "actualStartTime": "2017-04-07T10:50:20.0233333",
+      "postResultTime": "2017-04-07T10:54:03.88",
+      "scoreRedFinal": 356,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 79,
+      "scoreBlueFinal": 305,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 4469,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3070,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2471,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5450,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3674,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": true
+        },
+        {
+          "teamNumber": 4513,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 48",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 48,
+      "startTime": "2017-04-07T10:31:00",
+      "actualStartTime": "2017-04-07T10:58:23.2266667",
+      "postResultTime": "2017-04-07T11:01:25.96",
+      "scoreRedFinal": 372,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 77,
+      "scoreBlueFinal": 140,
+      "scoreBlueFoul": 5,
+      "scoreBlueAuto": 5,
+      "Teams": [
+        {
+          "teamNumber": 1425,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4662,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1778,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6343,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4918,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5803,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 49",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 49,
+      "startTime": "2017-04-07T10:38:00",
+      "actualStartTime": "2017-04-07T11:05:38.71",
+      "postResultTime": "2017-04-07T11:08:32.5",
+      "scoreRedFinal": 348,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 78,
+      "scoreBlueFinal": 285,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 15,
+      "Teams": [
+        {
+          "teamNumber": 3238,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2910,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4173,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3693,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4495,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5588,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 50",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 50,
+      "startTime": "2017-04-07T10:45:00",
+      "actualStartTime": "2017-04-07T11:12:30.6266667",
+      "postResultTime": "2017-04-07T11:15:32.18",
+      "scoreRedFinal": 327,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 17,
+      "scoreBlueFinal": 305,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 3663,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 997,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2374,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4125,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6350,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3219,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 51",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 51,
+      "startTime": "2017-04-07T10:52:00",
+      "actualStartTime": "2017-04-07T11:20:41.7333333",
+      "postResultTime": "2017-04-07T11:24:19.3633333",
+      "scoreRedFinal": 291,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 12,
+      "scoreBlueFinal": 295,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 1294,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 753,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4131,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2907,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 955,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2557,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 52",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 52,
+      "startTime": "2017-04-07T10:59:00",
+      "actualStartTime": "2017-04-07T11:27:59.4066667",
+      "postResultTime": "2017-04-07T11:31:36.5733333",
+      "scoreRedFinal": 235,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 338,
+      "scoreBlueFoul": 10,
+      "scoreBlueAuto": 85,
+      "Teams": [
+        {
+          "teamNumber": 5085,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2928,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2980,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3711,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4061,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 488,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 53",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 53,
+      "startTime": "2017-04-07T11:06:00",
+      "actualStartTime": "2017-04-07T11:34:34.3466667",
+      "postResultTime": "2017-04-07T11:37:20.35",
+      "scoreRedFinal": 207,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 310,
+      "scoreBlueFoul": 5,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 2930,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2990,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2521,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3393,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6445,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1595,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 54",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 54,
+      "startTime": "2017-04-07T11:13:00",
+      "actualStartTime": "2017-04-07T11:40:11.96",
+      "postResultTime": "2017-04-07T11:43:01.8566667",
+      "scoreRedFinal": 345,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 215,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 3223,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3674,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4469,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5975,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 492,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2147,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 55",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 55,
+      "startTime": "2017-04-07T11:20:00",
+      "actualStartTime": "2017-04-07T11:46:01.13",
+      "postResultTime": "2017-04-07T11:49:37.4366667",
+      "scoreRedFinal": 256,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 321,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 6350,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4495,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": true
+        },
+        {
+          "teamNumber": 1318,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1425,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2046,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5295,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 56",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 56,
+      "startTime": "2017-04-07T11:27:00",
+      "actualStartTime": "2017-04-07T11:52:39.6366667",
+      "postResultTime": "2017-04-07T11:55:31.3233333",
+      "scoreRedFinal": 261,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 90,
+      "scoreBlueFinal": 242,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 15,
+      "Teams": [
+        {
+          "teamNumber": 5803,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4488,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4513,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5198,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4911,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2374,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 57",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 57,
+      "startTime": "2017-04-07T11:34:00",
+      "actualStartTime": "2017-04-07T11:58:58.51",
+      "postResultTime": "2017-04-07T12:01:44.5433333",
+      "scoreRedFinal": 275,
+      "scoreRedFoul": 20,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 378,
+      "scoreBlueFoul": 75,
+      "scoreBlueAuto": 73,
+      "Teams": [
+        {
+          "teamNumber": 3711,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1778,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4450,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5468,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2910,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4662,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 58",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 58,
+      "startTime": "2017-04-07T11:41:00",
+      "actualStartTime": "2017-04-07T12:05:33.4033333",
+      "postResultTime": "2017-04-07T12:08:28.29",
+      "scoreRedFinal": 289,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 19,
+      "scoreBlueFinal": 309,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 77,
+      "Teams": [
+        {
+          "teamNumber": 2811,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3663,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3393,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6445,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1540,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2907,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 59",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 59,
+      "startTime": "2017-04-07T11:48:00",
+      "actualStartTime": "2017-04-07T12:16:03.23",
+      "postResultTime": "2017-04-07T12:19:24.22",
+      "scoreRedFinal": 320,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 311,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 21,
+      "Teams": [
+        {
+          "teamNumber": 4061,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1294,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3238,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6343,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 488,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3024,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 60",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 60,
+      "startTime": "2017-04-07T11:55:00",
+      "actualStartTime": "2017-04-07T12:23:01.7933333",
+      "postResultTime": "2017-04-07T12:25:44.83",
+      "scoreRedFinal": 313,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 305,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 3223,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2990,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5588,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2550,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2980,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4915,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 61",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 61,
+      "startTime": "2017-04-07T12:02:00",
+      "actualStartTime": "2017-04-07T12:30:48.9033333",
+      "postResultTime": "2017-04-07T12:33:33.0933333",
+      "scoreRedFinal": 205,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 349,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 73,
+      "Teams": [
+        {
+          "teamNumber": 2928,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2521,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5975,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2471,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2930,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 753,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 62",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 62,
+      "startTime": "2017-04-07T12:09:00",
+      "actualStartTime": "2017-04-07T12:37:10.39",
+      "postResultTime": "2017-04-07T12:40:05.3433333",
+      "scoreRedFinal": 355,
+      "scoreRedFoul": 50,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 280,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 1595,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 948,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 955,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3070,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5970,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 997,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 63",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 63,
+      "startTime": "2017-04-07T12:16:00",
+      "actualStartTime": "2017-04-07T13:28:48.55",
+      "postResultTime": "2017-04-07T13:31:34.1933333",
+      "scoreRedFinal": 296,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 245,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 4125,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5827,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5085,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3693,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2557,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5450,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 64",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 64,
+      "startTime": "2017-04-07T12:23:00",
+      "actualStartTime": "2017-04-07T13:36:18.4866667",
+      "postResultTime": "2017-04-07T13:39:02.63",
+      "scoreRedFinal": 255,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 260,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 3219,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 957,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4173,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5920,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4131,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4918,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 65",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 65,
+      "startTime": "2017-04-07T13:30:00",
+      "actualStartTime": "2017-04-07T13:43:26.8466667",
+      "postResultTime": "2017-04-07T13:46:54.95",
+      "scoreRedFinal": 286,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 16,
+      "scoreBlueFinal": 371,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 83,
+      "Teams": [
+        {
+          "teamNumber": 2907,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3393,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1318,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 488,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2147,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3674,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 66",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 66,
+      "startTime": "2017-04-07T13:37:00",
+      "actualStartTime": "2017-04-07T13:50:36.8",
+      "postResultTime": "2017-04-07T13:53:27.84",
+      "scoreRedFinal": 237,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 17,
+      "scoreBlueFinal": 232,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 10,
+      "Teams": [
+        {
+          "teamNumber": 753,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2811,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3238,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5803,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6350,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2046,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 67",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 67,
+      "startTime": "2017-04-07T13:44:00",
+      "actualStartTime": "2017-04-07T13:57:43.3933333",
+      "postResultTime": "2017-04-07T14:00:30.5266667",
+      "scoreRedFinal": 205,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 370,
+      "scoreBlueFoul": 30,
+      "scoreBlueAuto": 70,
+      "Teams": [
+        {
+          "teamNumber": 5198,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2930,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3711,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1540,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5588,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4469,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 68",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 68,
+      "startTime": "2017-04-07T13:51:00",
+      "actualStartTime": "2017-04-07T14:03:27.7066667",
+      "postResultTime": "2017-04-07T14:07:12.9733333",
+      "scoreRedFinal": 155,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 330,
+      "scoreBlueFoul": 5,
+      "scoreBlueAuto": 15,
+      "Teams": [
+        {
+          "teamNumber": 5295,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3024,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5085,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2521,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3663,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1778,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 69",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 69,
+      "startTime": "2017-04-07T13:58:00",
+      "actualStartTime": "2017-04-07T14:10:56.7533333",
+      "postResultTime": "2017-04-07T14:13:42.7933333",
+      "scoreRedFinal": 291,
+      "scoreRedFoul": 5,
+      "scoreRedAuto": 82,
+      "scoreBlueFinal": 285,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 15,
+      "Teams": [
+        {
+          "teamNumber": 3693,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4662,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4915,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1595,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4061,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5920,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 70",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 70,
+      "startTime": "2017-04-07T14:05:00",
+      "actualStartTime": "2017-04-07T14:18:08.2933333",
+      "postResultTime": "2017-04-07T14:20:50.5933333",
+      "scoreRedFinal": 314,
+      "scoreRedFoul": 5,
+      "scoreRedAuto": 79,
+      "scoreBlueFinal": 255,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 2910,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6445,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4125,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5827,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5975,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4131,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 71",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 71,
+      "startTime": "2017-04-07T14:12:00",
+      "actualStartTime": "2017-04-07T18:29:35.2533333",
+      "postResultTime": "2017-04-07T18:33:05.7433333",
+      "scoreRedFinal": 205,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 250,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 70,
+      "Teams": [
+        {
+          "teamNumber": 2990,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5450,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3219,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4513,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 948,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5970,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 72",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 72,
+      "startTime": "2017-04-07T14:19:00",
+      "actualStartTime": "2017-04-07T18:37:06.6833333",
+      "postResultTime": "2017-04-07T18:39:53.6733333",
+      "scoreRedFinal": 220,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 79,
+      "scoreBlueFinal": 247,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 17,
+      "Teams": [
+        {
+          "teamNumber": 4911,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 957,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5468,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1425,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6343,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 955,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 73",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 73,
+      "startTime": "2017-04-07T14:26:00",
+      "actualStartTime": "2017-04-07T14:55:29.2166667",
+      "postResultTime": "2017-04-07T14:58:17.09",
+      "scoreRedFinal": 295,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 230,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 10,
+      "Teams": [
+        {
+          "teamNumber": 2374,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3223,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2471,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2557,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4173,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4495,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 74",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 74,
+      "startTime": "2017-04-07T14:33:00",
+      "actualStartTime": "2017-04-07T15:02:08.4666667",
+      "postResultTime": "2017-04-07T15:04:49.9766667",
+      "scoreRedFinal": 220,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 23,
+      "scoreBlueFinal": 345,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 2980,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4918,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4488,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 492,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 997,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2928,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 75",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 75,
+      "startTime": "2017-04-07T14:40:00",
+      "actualStartTime": "2017-04-07T15:08:24.61",
+      "postResultTime": "2017-04-07T15:11:10.0633333",
+      "scoreRedFinal": 210,
+      "scoreRedFoul": 5,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 230,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 3070,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1294,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2930,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2550,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4450,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1318,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 76",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 76,
+      "startTime": "2017-04-07T14:47:00",
+      "actualStartTime": "2017-04-07T15:14:40.2066667",
+      "postResultTime": "2017-04-07T15:17:21.76",
+      "scoreRedFinal": 320,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 286,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 83,
+      "Teams": [
+        {
+          "teamNumber": 5970,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5803,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3674,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4131,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4915,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3711,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 77",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 77,
+      "startTime": "2017-04-07T14:54:00",
+      "actualStartTime": "2017-04-07T15:20:37.78",
+      "postResultTime": "2017-04-07T15:23:22.8133333",
+      "scoreRedFinal": 277,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 17,
+      "scoreBlueFinal": 305,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 1778,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2811,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1540,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1595,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3693,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4125,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 78",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 78,
+      "startTime": "2017-04-07T15:01:00",
+      "actualStartTime": "2017-04-07T15:26:15.9533333",
+      "postResultTime": "2017-04-07T15:29:05.9",
+      "scoreRedFinal": 350,
+      "scoreRedFoul": 5,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 135,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 15,
+      "Teams": [
+        {
+          "teamNumber": 6343,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2907,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 948,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3223,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5827,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5295,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 79",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 79,
+      "startTime": "2017-04-07T15:08:00",
+      "actualStartTime": "2017-04-07T15:32:33.2",
+      "postResultTime": "2017-04-07T15:35:15.9",
+      "scoreRedFinal": 262,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 82,
+      "scoreBlueFinal": 329,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 84,
+      "Teams": [
+        {
+          "teamNumber": 997,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2910,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3393,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2471,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 957,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2046,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 80",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 80,
+      "startTime": "2017-04-07T15:15:00",
+      "actualStartTime": "2017-04-07T15:39:24.9",
+      "postResultTime": "2017-04-07T15:42:09.3",
+      "scoreRedFinal": 235,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 264,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 79,
+      "Teams": [
+        {
+          "teamNumber": 955,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1294,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5975,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4918,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5198,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5588,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 81",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 81,
+      "startTime": "2017-04-07T15:22:00",
+      "actualStartTime": "2017-04-07T15:46:35.3233333",
+      "postResultTime": "2017-04-07T15:49:23.1866667",
+      "scoreRedFinal": 245,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 308,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 90,
+      "Teams": [
+        {
+          "teamNumber": 2550,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3219,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4495,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4911,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 488,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4662,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 82",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 82,
+      "startTime": "2017-04-07T15:29:00",
+      "actualStartTime": "2017-04-07T15:52:44.5333333",
+      "postResultTime": "2017-04-07T15:55:56.9933333",
+      "scoreRedFinal": 346,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 255,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 20,
+      "Teams": [
+        {
+          "teamNumber": 3663,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5920,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5085,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4469,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 753,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2990,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": true
+        }
+      ]
+    },
+    {
+      "description": "Qualification 83",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 83,
+      "startTime": "2017-04-07T15:36:00",
+      "actualStartTime": "2017-04-07T15:59:04.3366667",
+      "postResultTime": "2017-04-07T16:01:48.3",
+      "scoreRedFinal": 230,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 10,
+      "scoreBlueFinal": 316,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 84,
+      "Teams": [
+        {
+          "teamNumber": 3070,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2557,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2147,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4061,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4488,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2521,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 84",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 84,
+      "startTime": "2017-04-07T15:43:00",
+      "actualStartTime": "2017-04-07T16:05:46.8",
+      "postResultTime": "2017-04-07T16:08:43.7",
+      "scoreRedFinal": 296,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 76,
+      "scoreBlueFinal": 325,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 15,
+      "Teams": [
+        {
+          "teamNumber": 6445,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 492,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3238,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2374,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1425,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4450,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 85",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 85,
+      "startTime": "2017-04-07T15:50:00",
+      "actualStartTime": "2017-04-07T16:11:56.87",
+      "postResultTime": "2017-04-07T16:14:42.99",
+      "scoreRedFinal": 149,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 255,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 4173,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5468,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3024,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6350,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4513,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2928,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 86",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 86,
+      "startTime": "2017-04-07T15:57:00",
+      "actualStartTime": "2017-04-07T16:18:48.3033333",
+      "postResultTime": "2017-04-07T16:21:34.16",
+      "scoreRedFinal": 312,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 81,
+      "scoreBlueFinal": 255,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 4495,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1595,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5450,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1294,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2980,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3711,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 87",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 87,
+      "startTime": "2017-04-07T16:04:00",
+      "actualStartTime": "2017-04-07T16:25:05.19",
+      "postResultTime": "2017-04-07T16:27:53.2033333",
+      "scoreRedFinal": 268,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 83,
+      "scoreBlueFinal": 283,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 91,
+      "Teams": [
+        {
+          "teamNumber": 1318,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4469,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 488,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4918,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1540,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2910,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 88",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 88,
+      "startTime": "2017-04-07T16:11:00",
+      "actualStartTime": "2017-04-07T16:32:37.8533333",
+      "postResultTime": "2017-04-07T16:36:01.16",
+      "scoreRedFinal": 299,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 79,
+      "scoreBlueFinal": 245,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 5295,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 997,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5803,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6343,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5920,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5975,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 89",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 89,
+      "startTime": "2017-04-07T16:18:00",
+      "actualStartTime": "2017-04-07T16:39:09.33",
+      "postResultTime": "2017-04-07T16:42:03.9733333",
+      "scoreRedFinal": 295,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 349,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 76,
+      "Teams": [
+        {
+          "teamNumber": 5827,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2990,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2374,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3070,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3674,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4911,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 90",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 90,
+      "startTime": "2017-04-07T16:25:00",
+      "actualStartTime": "2017-04-07T16:45:13.68",
+      "postResultTime": "2017-04-07T16:47:58.8866667",
+      "scoreRedFinal": 280,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 18,
+      "scoreBlueFinal": 352,
+      "scoreBlueFoul": 5,
+      "scoreBlueAuto": 84,
+      "Teams": [
+        {
+          "teamNumber": 6350,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 955,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4915,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4662,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2471,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5085,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 91",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 91,
+      "startTime": "2017-04-07T16:32:00",
+      "actualStartTime": "2017-04-07T16:57:57.0666667",
+      "postResultTime": "2017-04-07T17:00:40.3933333",
+      "scoreRedFinal": 310,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 25,
+      "scoreBlueFinal": 209,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 20,
+      "Teams": [
+        {
+          "teamNumber": 3693,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5198,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4488,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4131,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5468,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3393,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 92",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 92,
+      "startTime": "2017-04-07T16:39:00",
+      "actualStartTime": "2017-04-07T17:06:38.89",
+      "postResultTime": "2017-04-07T17:09:34.2866667",
+      "scoreRedFinal": 295,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 295,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 957,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3024,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1778,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3223,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2907,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5970,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 93",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 93,
+      "startTime": "2017-04-07T16:46:00",
+      "actualStartTime": "2017-04-07T17:12:43.27",
+      "postResultTime": "2017-04-07T17:16:30.0933333",
+      "scoreRedFinal": 331,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 82,
+      "scoreBlueFinal": 305,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 492,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2046,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3219,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6445,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5588,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4061,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 94",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 94,
+      "startTime": "2017-04-07T16:53:00",
+      "actualStartTime": "2017-04-07T17:20:15.23",
+      "postResultTime": "2017-04-07T17:23:01.1366667",
+      "scoreRedFinal": 230,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 328,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 18,
+      "Teams": [
+        {
+          "teamNumber": 2930,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2550,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2557,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3663,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3238,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4513,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 95",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 95,
+      "startTime": "2017-04-07T17:00:00",
+      "actualStartTime": "2017-04-07T17:26:57.7833333",
+      "postResultTime": "2017-04-07T17:29:48.1433333",
+      "scoreRedFinal": 355,
+      "scoreRedFoul": 50,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 199,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 19,
+      "Teams": [
+        {
+          "teamNumber": 5450,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2928,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2811,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4450,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4173,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2521,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 96",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 96,
+      "startTime": "2017-04-07T17:07:00",
+      "actualStartTime": "2017-04-07T17:33:11.87",
+      "postResultTime": "2017-04-07T17:36:05.3033333",
+      "scoreRedFinal": 345,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 300,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 948,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4125,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2980,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 753,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2147,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1425,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 97",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 97,
+      "startTime": "2017-04-07T17:14:00",
+      "actualStartTime": "2017-04-07T17:39:53.98",
+      "postResultTime": "2017-04-07T17:42:42.5333333",
+      "scoreRedFinal": 270,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 77,
+      "scoreBlueFinal": 345,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 4918,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3693,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3711,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3024,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2990,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3070,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 98",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 98,
+      "startTime": "2017-04-07T17:21:00",
+      "actualStartTime": "2017-04-07T17:46:30.2466667",
+      "postResultTime": "2017-04-07T17:49:11.9533333",
+      "scoreRedFinal": 377,
+      "scoreRedFoul": 30,
+      "scoreRedAuto": 77,
+      "scoreBlueFinal": 295,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 2910,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1595,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2907,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5920,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2374,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 955,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 99",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 99,
+      "startTime": "2017-04-07T17:28:00",
+      "actualStartTime": "2017-04-07T17:52:05.7033333",
+      "postResultTime": "2017-04-07T17:54:47.85",
+      "scoreRedFinal": 345,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 364,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 82,
+      "Teams": [
+        {
+          "teamNumber": 1778,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4513,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5975,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4915,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3393,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3238,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 100",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 100,
+      "startTime": "2017-04-07T17:35:00",
+      "actualStartTime": "2017-04-07T17:57:50.37",
+      "postResultTime": "2017-04-07T18:00:36.0466667",
+      "scoreRedFinal": 350,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 79,
+      "scoreBlueFinal": 255,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 2046,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3663,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2928,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5198,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 492,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5450,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 101",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 101,
+      "startTime": "2017-04-07T17:42:00",
+      "actualStartTime": "2017-04-07T18:04:30.4833333",
+      "postResultTime": "2017-04-07T18:07:12.17",
+      "scoreRedFinal": 205,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 260,
+      "scoreBlueFoul": 5,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 5970,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6343,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6350,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4495,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2521,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1540,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 102",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 102,
+      "startTime": "2017-04-07T17:49:00",
+      "actualStartTime": "2017-04-07T18:10:25.9233333",
+      "postResultTime": "2017-04-07T18:13:11.8",
+      "scoreRedFinal": 335,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 80,
+      "scoreBlueFinal": 294,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 4450,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5803,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5827,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4061,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1318,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2471,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 103",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 103,
+      "startTime": "2017-04-07T17:56:00",
+      "actualStartTime": "2017-04-07T18:16:39.25",
+      "postResultTime": "2017-04-07T18:19:28.9833333",
+      "scoreRedFinal": 330,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 281,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 83,
+      "Teams": [
+        {
+          "teamNumber": 4131,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2811,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5588,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 948,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5085,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 488,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 104",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 104,
+      "startTime": "2017-04-07T18:03:00",
+      "actualStartTime": "2017-04-07T18:22:30.9933333",
+      "postResultTime": "2017-04-07T18:25:16.7666667",
+      "scoreRedFinal": 260,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 381,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 77,
+      "Teams": [
+        {
+          "teamNumber": 1425,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3223,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4173,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4488,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 997,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2930,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 105",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 105,
+      "startTime": "2017-04-08T09:00:00",
+      "actualStartTime": "2017-04-08T09:25:48.2533333",
+      "postResultTime": "2017-04-08T09:28:31.62",
+      "scoreRedFinal": 295,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 25,
+      "scoreBlueFinal": 271,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 18,
+      "Teams": [
+        {
+          "teamNumber": 4662,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4469,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2557,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5468,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6445,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2980,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 106",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 106,
+      "startTime": "2017-04-08T09:07:00",
+      "actualStartTime": "2017-04-08T09:31:55.8366667",
+      "postResultTime": "2017-04-08T09:34:38.7933333",
+      "scoreRedFinal": 345,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 295,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 4125,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 957,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5295,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1294,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2550,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3674,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 107",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 107,
+      "startTime": "2017-04-08T09:14:00",
+      "actualStartTime": "2017-04-08T09:38:06.7766667",
+      "postResultTime": "2017-04-08T09:40:51.0833333",
+      "scoreRedFinal": 263,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 77,
+      "scoreBlueFinal": 266,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 4911,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2147,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1540,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 753,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3219,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4450,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 108",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 108,
+      "startTime": "2017-04-08T09:21:00",
+      "actualStartTime": "2017-04-08T09:44:05.9866667",
+      "postResultTime": "2017-04-08T09:46:50.4266667",
+      "scoreRedFinal": 346,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 83,
+      "scoreBlueFinal": 281,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 76,
+      "Teams": [
+        {
+          "teamNumber": 488,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3693,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 492,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 948,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6350,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2521,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 109",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 109,
+      "startTime": "2017-04-08T09:28:00",
+      "actualStartTime": "2017-04-08T09:53:53.5833333",
+      "postResultTime": "2017-04-08T09:56:41.1866667",
+      "scoreRedFinal": 210,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 70,
+      "scoreBlueFinal": 351,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 84,
+      "Teams": [
+        {
+          "teamNumber": 2990,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4173,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4131,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1318,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6343,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2046,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 110",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 110,
+      "startTime": "2017-04-08T09:35:00",
+      "actualStartTime": "2017-04-08T09:59:50.61",
+      "postResultTime": "2017-04-08T10:02:35.3733333",
+      "scoreRedFinal": 280,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 10,
+      "scoreBlueFinal": 372,
+      "scoreBlueFoul": 30,
+      "scoreBlueAuto": 15,
+      "Teams": [
+        {
+          "teamNumber": 3393,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5970,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2980,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2374,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3238,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5468,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 111",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 111,
+      "startTime": "2017-04-08T09:42:00",
+      "actualStartTime": "2017-04-08T10:05:56.0366667",
+      "postResultTime": "2017-04-08T10:08:47.8733333",
+      "scoreRedFinal": 309,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 79,
+      "scoreBlueFinal": 205,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 5085,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5198,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5803,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2550,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3070,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4125,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 112",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 112,
+      "startTime": "2017-04-08T09:49:00",
+      "actualStartTime": "2017-04-08T10:12:16.5733333",
+      "postResultTime": "2017-04-08T10:15:00.9766667",
+      "scoreRedFinal": 315,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 293,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 23,
+      "Teams": [
+        {
+          "teamNumber": 997,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4513,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 753,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1294,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4662,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5827,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 113",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 113,
+      "startTime": "2017-04-08T09:56:00",
+      "actualStartTime": "2017-04-08T10:19:48.3366667",
+      "postResultTime": "2017-04-08T10:22:31.9933333",
+      "scoreRedFinal": 353,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 81,
+      "scoreBlueFinal": 306,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 4488,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2910,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3223,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3219,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4469,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2811,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 114",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 114,
+      "startTime": "2017-04-08T10:03:00",
+      "actualStartTime": "2017-04-08T10:26:22.26",
+      "postResultTime": "2017-04-08T10:29:06.0133333",
+      "scoreRedFinal": 366,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 83,
+      "scoreBlueFinal": 347,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 77,
+      "Teams": [
+        {
+          "teamNumber": 2147,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4915,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5295,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6445,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3024,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 955,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 115",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 115,
+      "startTime": "2017-04-08T10:10:00",
+      "actualStartTime": "2017-04-08T10:32:35.53",
+      "postResultTime": "2017-04-08T10:35:18.6366667",
+      "scoreRedFinal": 255,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 305,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 5920,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2557,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1425,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1778,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2928,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5588,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 116",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 116,
+      "startTime": "2017-04-08T10:17:00",
+      "actualStartTime": "2017-04-08T10:39:21.9733333",
+      "postResultTime": "2017-04-08T10:42:05.3466667",
+      "scoreRedFinal": 305,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 295,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 957,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2907,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5450,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2930,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5975,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4495,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 117",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 117,
+      "startTime": "2017-04-08T10:24:00",
+      "actualStartTime": "2017-04-08T10:45:47.9366667",
+      "postResultTime": "2017-04-08T10:48:33.9666667",
+      "scoreRedFinal": 208,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 78,
+      "scoreBlueFinal": 332,
+      "scoreBlueFoul": 5,
+      "scoreBlueAuto": 84,
+      "Teams": [
+        {
+          "teamNumber": 2471,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1595,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3711,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4918,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4911,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3663,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 118",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 118,
+      "startTime": "2017-04-08T10:31:00",
+      "actualStartTime": "2017-04-08T10:55:51.5633333",
+      "postResultTime": "2017-04-08T10:58:38.6966667",
+      "scoreRedFinal": 332,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 78,
+      "scoreBlueFinal": 302,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 82,
+      "Teams": [
+        {
+          "teamNumber": 4061,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5803,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5468,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3674,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2910,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2990,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 119",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 119,
+      "startTime": "2017-04-08T10:38:00",
+      "actualStartTime": "2017-04-08T11:02:37.0733333",
+      "postResultTime": "2017-04-08T11:05:22.03",
+      "scoreRedFinal": 196,
+      "scoreRedFoul": 25,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 330,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 82,
+      "Teams": [
+        {
+          "teamNumber": 753,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2980,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6343,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3070,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1318,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4915,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 120",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 120,
+      "startTime": "2017-04-08T10:45:00",
+      "actualStartTime": "2017-04-08T11:09:49.9",
+      "postResultTime": "2017-04-08T11:13:52.22",
+      "scoreRedFinal": 255,
+      "scoreRedFoul": 50,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 294,
+      "scoreBlueFoul": 5,
+      "scoreBlueAuto": 15,
+      "Teams": [
+        {
+          "teamNumber": 1294,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5085,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1425,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1540,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3219,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3393,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 121",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 121,
+      "startTime": "2017-04-08T10:52:00",
+      "actualStartTime": "2017-04-08T11:15:56.4566667",
+      "postResultTime": "2017-04-08T11:18:46.0033333",
+      "scoreRedFinal": 275,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 15,
+      "scoreBlueFinal": 255,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 4495,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4513,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3024,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 955,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4450,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2811,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 122",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 122,
+      "startTime": "2017-04-08T10:59:00",
+      "actualStartTime": "2017-04-08T11:26:31.52",
+      "postResultTime": "2017-04-08T11:29:15.77",
+      "scoreRedFinal": 309,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 77,
+      "scoreBlueFinal": 345,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 3223,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5450,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4918,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 6445,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4131,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5295,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 123",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 123,
+      "startTime": "2017-04-08T11:06:00",
+      "actualStartTime": "2017-04-08T11:34:16.73",
+      "postResultTime": "2017-04-08T11:36:59.8433333",
+      "scoreRedFinal": 265,
+      "scoreRedFoul": 10,
+      "scoreRedAuto": 70,
+      "scoreBlueFinal": 310,
+      "scoreBlueFoul": 5,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 5198,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1595,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4469,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4061,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 957,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2557,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 124",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 124,
+      "startTime": "2017-04-08T11:13:00",
+      "actualStartTime": "2017-04-08T11:41:17.3733333",
+      "postResultTime": "2017-04-08T11:44:03.59",
+      "scoreRedFinal": 379,
+      "scoreRedFoul": 30,
+      "scoreRedAuto": 88,
+      "scoreBlueFinal": 255,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 2930,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 488,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2046,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3674,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4125,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5920,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 125",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 125,
+      "startTime": "2017-04-08T11:20:00",
+      "actualStartTime": "2017-04-08T11:47:41.2466667",
+      "postResultTime": "2017-04-08T11:50:36.7366667",
+      "scoreRedFinal": 348,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 76,
+      "scoreBlueFinal": 245,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 25,
+      "Teams": [
+        {
+          "teamNumber": 3693,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3663,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2147,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4662,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2928,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2374,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 126",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 126,
+      "startTime": "2017-04-08T11:27:00",
+      "actualStartTime": "2017-04-08T11:53:50.0033333",
+      "postResultTime": "2017-04-08T11:56:35.9",
+      "scoreRedFinal": 307,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 79,
+      "scoreBlueFinal": 310,
+      "scoreBlueFoul": 25,
+      "scoreBlueAuto": 15,
+      "Teams": [
+        {
+          "teamNumber": 492,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2521,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4911,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4173,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 1778,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2907,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 127",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 127,
+      "startTime": "2017-04-08T11:34:00",
+      "actualStartTime": "2017-04-08T12:00:38.2766667",
+      "postResultTime": "2017-04-08T12:04:50.5933333",
+      "scoreRedFinal": 295,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 380,
+      "scoreBlueFoul": 5,
+      "scoreBlueAuto": 75,
+      "Teams": [
+        {
+          "teamNumber": 2550,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3711,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 3238,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 997,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 2471,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 948,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    },
+    {
+      "description": "Qualification 128",
+      "tournamentLevel": "Qualification",
+      "matchNumber": 128,
+      "startTime": "2017-04-08T11:41:00",
+      "actualStartTime": "2017-04-08T12:09:11.7266667",
+      "postResultTime": "2017-04-08T12:11:58.5266667",
+      "scoreRedFinal": 255,
+      "scoreRedFoul": 0,
+      "scoreRedAuto": 75,
+      "scoreBlueFinal": 349,
+      "scoreBlueFoul": 0,
+      "scoreBlueAuto": 77,
+      "Teams": [
+        {
+          "teamNumber": 6350,
+          "station": "Red1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5975,
+          "station": "Red2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5588,
+          "station": "Red3",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5970,
+          "station": "Blue1",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 4488,
+          "station": "Blue2",
+          "surrogate": false,
+          "dq": false
+        },
+        {
+          "teamNumber": 5827,
+          "station": "Blue3",
+          "surrogate": false,
+          "dq": false
+        }
+      ]
+    }
+  ]
+}
