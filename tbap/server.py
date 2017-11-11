@@ -123,8 +123,8 @@ def send_http_request(session, args, mod_since=None, only_mod_since=None):
         url += "/" + str(arg)
 
     hdrs = {"X-TBA-Auth-Key": session.key,
-            "X-TBA-App-Id": "stacy_irwin:Tbap-Python-Package:0.9",
-            "User-Agent": "stacy_irwin:Tbap-Python-Package:0.9"}
+            "X-TBA-App-Id": session.username + ":Tbap-Python-Package:0.9",
+            "User-Agent": session.username + ":Tbap-Python-Package:0.9"}
     req = urllib.request.Request(url, headers=hdrs)
     data = {}
     try:
@@ -132,47 +132,21 @@ def send_http_request(session, args, mod_since=None, only_mod_since=None):
             data["code"] = resp.getcode()
             data["text"] = resp.read().decode("utf-8")
             data["url"] = resp.geturl()
-            data["args"] = args
             for key, value in resp.info().items():
                 data[key] = value
+    except urllib.error.HTTPError as err:
+        data["code"] = err.code
+        data["error_message"] = "HTTPError, Code {}: {}".format(err.code,
+                                                                err.reason)
+        for key, value in err.headers.items():
+            data[key] = value
+        warnings.warn(data["error_message"])
     except urllib.error.URLError as err:
-        print(err)
-    except:
-        print("Some other error.")
+        data["error_message"] = "URLError: {}".format(err.reason)
+        warnings.warn(data["error_message"])
+    finally:
+        data["args"] = args
     return data
-
-
-def build_single_column_frame(data, response, series=False):
-    jdata = json.loads(data) if isinstance(data, str) else data
-    rows = []
-
-    def append_scaler(key, val):
-        if isinstance(val, dict):
-            if not val:
-                rows.append({"label": key, "value": None})
-            else:
-                for subkey, subval in val.items():
-                    append_scaler(key + "_" + subkey, subval)
-        elif isinstance(val, list):
-            if not val:
-                rows.append({"label": key, "value": None})
-            else:
-                for idx, item in enumerate(val):
-                    append_scaler(key + "_" + str(idx), item)
-        else:
-            rows.append({"label": key, "value": val})
-
-    for jkey, jval in jdata.items():
-        append_scaler(jkey, jval)
-
-    if series:
-        s_list = [(x["label"], x["value"]) for x in rows]
-        dframe = pandas.Series(map(lambda x: x[1], s_list),
-                               index=map(lambda x: x[0], s_list))
-    else:
-        dframe =  pandas.DataFrame(rows).set_index(["label"])
-
-    return attach_attributes(dframe, response)
 
 
 def send_http_request_old(session, url, cmd, mod_since=None, only_mod_since=None):
@@ -346,8 +320,7 @@ def build_frame(response):
 def attach_attributes(dframe, response):
     dframe.attr = {}
     for key, val in response.items():
-        if key != "text":
-            dframe.attr[key] = val
+        dframe.attr[key] = val
     return dframe
 
 

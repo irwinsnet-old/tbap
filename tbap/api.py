@@ -79,25 +79,42 @@ import collections
 import datetime
 import json
 import re
-import numpy
 
+import numpy
 import pandas.io.json
 import pandas
 
 import tbap.server as server
+import tbap.dframe as dframe
 
 
-def send_request(session, http_args, mod_since=None, only_mod_since=None):
+def get_status(session):
+    """
+
+    Args:
+        session:
+
+    Returns:
+
+    """
+    http_args = ["status"]
+    return send_request(session, http_args, "single_column")
+
+
+def send_request(session, http_args, normalize="table", mod_since=None,
+                 only_mod_since=None):
     """Routes data request to correct internal functions.
 
     Args:
         session:
             An instance of tbap.classes.Session that contains
             a valid username and authorization key.
-        cmd:
-            A string that identifies the TBA Read API command.
-        args:
-            A Python dictionary.
+        http_args:
+            A Python list of parameters that will be added to the http
+            request.
+        normalize (str):
+            Specifies which alorithm will be used to convert and
+            normalize the JSON data into a pandas dataframe.
         mod_since:
             A string containing an HTTP formatted date and time.
             Causes function to return None if no changes have been
@@ -109,24 +126,18 @@ def send_request(session, http_args, mod_since=None, only_mod_since=None):
             changed since the date and time provided. Optional.
 
     Returns:
-        Either a server.DFrame object (if session.data_format =
+        Either a pandas.Dataframe object (if session.data_format =
         "dataframe") or a Python dictionary.
 
     """
     response = server.send_http_request(session, http_args)
-    if session.data_format == "dataframe":
-        return server.build_frame(response)
-    else:
+    if response["code"] != 200 or session.data_format != "dataframe":
         return response
-
-
-def get_status(session):
-    http_args = ["status"]
-    data = server.send_http_request(session, http_args)
-    if session.data_format != "dataframe":
-        return data
-    else:
-        return server.build_single_column_frame(data["text"], data)
+    if normalize == "table":
+        frame = server.build_frame(response)
+    elif normalize == "single_column":
+        frame = dframe.build_single_column_frame(response["text"])
+    return server.attach_attributes(frame, response)
 
 
 def get_teams(session,  # pylint: disable=too-many-arguments
@@ -706,6 +717,7 @@ def get_district_points(session, event, mod_since=None, only_mod_since=None):
 
     return {"points": df_points, "high_scores": df_high_scores}
 
+
 def get_media(session, team, year, mod_since=None, only_mod_since=None):
     http_args = ["team", team, "media", str(year)]
     data = server.send_http_request(session, http_args, mod_since,
@@ -716,6 +728,7 @@ def get_media(session, team, year, mod_since=None, only_mod_since=None):
     jdata = json.loads(data["text"])
 
     return pandas.io.json.json_normalize(jdata)
+
 
 def get_social_media(session, team, mod_since=None, only_mod_since=None):
     http_args = ["team", team, "social_media"]
@@ -729,7 +742,6 @@ def get_social_media(session, team, mod_since=None, only_mod_since=None):
     return pandas.io.json.json_normalize(jdata)
 
 
-# todo(stacy.irwin): Add username back to Session, pass as User-Agent header.
 # noinspection PyAttributeOutsideInit
 class Session:
     """Contains information required for every TBA Read API HTTP request.
@@ -748,16 +760,14 @@ class Session:
     PACKAGE_VERSION = "0.9"
     USER_AGENT_NAME = "tbap: Version" + PACKAGE_VERSION
 
-    def __init__(self, key, season=None, data_format="dataframe"):
+    def __init__(self, username, key, data_format="dataframe"):
         """Creates a ``Session`` object.
 
         Args:
+            username: (str)
+                TBA Read API username
             key: (str)
-                The TBA Read API authorization key
-            season: (int)
-                A four digit year identifying the competition season
-                for which data will be retrieved. Optional, defaults
-                to the current calendar year.
+                TBA Read API authorization key
             data_format:(str)
                 Specifies the format of the data that will be returned
                 by firstApiPY that submit HTTP requests. The allowed
@@ -765,8 +775,8 @@ class Session:
                 Optional, defaults to *dataframe*.
         """
 
+        self.username = username
         self.key = key
-        self.season = season
         self.data_format = data_format
 
     @property
@@ -787,38 +797,21 @@ class Session:
             # pylint W0201: attribute-defined-outside-init
 
     @property
-    def season(self):
-        """ FRC competition season.
+    def username(self):
+        """The account authorization key that is assigned by TBA Read API.
 
-        Returns: Four-digit integer
+        *Type:* String
+
         """
-        return self._season
+        return self._username
 
-    @season.setter
-    def season(self, season):
-        """A four digit year identifying the competition season_summary.
-
-        Args:
-            season: A four digit year. Can be either an integer, a
-                string, or None. If None, assigns the current year.
-
-        Raises:
-            ValueError if season_summary is prior to 2015 or later than
-            current year + 1
-        """
-        if isinstance(season, str) and season.isnumeric():
-            season = int(season)
-
-        current_year = int(datetime.date.today().strftime("%Y"))
-        if season is None:
-            self._season = current_year  # pylint: disable=W0201
-            # pylint W0201: attribute-defined-outside-init
-        elif (season >= 2015) and (season <= current_year + 1):
-            self._season = season  # pylint: disable=W0201
-            # pylint W0201: attribute-defined-outside-init
+    @username.setter
+    def username(self, username):
+        if not isinstance(username, str):
+            raise TypeError("username must be a string.")
         else:
-            raise ValueError("season_summary must be >= 2015"
-                             "and less than current year + 1.")
+            self._username = username  # pylint: disable=W0201
+            # pylint W0201: attribute-defined-outside-init
 
     @property
     def data_format(self):
@@ -837,11 +830,10 @@ class Session:
     def data_format(self, data_format):
 
         error_msg = ("The data_format property must be a string containing "
-                     "'dataframe', 'json', or 'xml' "
-                     "(case insensitive).")
+                     "'dataframe' or 'json' (case insensitive).")
         if not isinstance(data_format, str):
             raise TypeError(error_msg)
-        elif data_format.lower() not in ["dataframe", "json", "xml"]:
+        elif data_format.lower() not in ["dataframe", "json"]:
             raise ValueError(error_msg)
         else:
             self._data_format = data_format.lower()  # pylint: disable=W0201

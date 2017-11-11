@@ -4,6 +4,7 @@ import re
 import xml.etree.ElementTree as ET
 
 import pytest
+import pandas
 
 import tbap.api as api
 import tbap.server as server
@@ -14,15 +15,12 @@ class CheckResults(object):
 
     @staticmethod
     def frame(frame, test_data, mod_time=None):
-        CheckResults.attr(frame.attr, mod_time)
-        assert isinstance(frame, server.Dframe)
-        assert frame.attr["frame_type"] == test_data["frame_type"]
+        CheckResults.attr(frame.attr)
+        assert isinstance(frame, pandas.DataFrame)
+        assert frame.attr["args"] == test_data["args"]
         assert frame.shape == test_data["shape"]
-        assert frame.index.min() == 0
-        assert frame.index.max() == (test_data["shape"][0] - 1)
-        assert frame.index.is_monotonic_increasing
-        col, row, value = test_data["spotcheck"]
-        assert frame[col][row] == value
+        idx, col, value = test_data["spotcheck"]
+        assert frame.loc[idx, col] == value
         json.loads(frame.attr["text"])  # Verify that "text" is valid JSON text.
 
     @staticmethod
@@ -44,7 +42,7 @@ class CheckResults(object):
         if "Last-Modified" in attr.keys():
             assert server.httpdate_to_datetime(attr["Last-Modified"])
         assert server.httpdate_to_datetime(attr["Date"])
-        assert re.match("'https://www.thebluealliance.com/api/v3/",
+        assert re.match("https://www.thebluealliance.com/api/v3/",
                         attr["url"]) is not None
         assert isinstance(attr["args"], list)
         assert attr["X-TBA-Version"] == "3"
@@ -93,10 +91,18 @@ class CheckResults(object):
 class TestStatus(object):
 
     def test_status(self):
-        sn = api.Session(key)
+        sn = api.Session(auth.username, auth.key)
         status = api.get_status(sn)
-        print()
-        print(status)
+        tdata = {"shape": (10, 1), "args": ["status"],
+                 "spotcheck": ("max_season", "value", 2018)}
+        CheckResults.frame(status, tdata)
+
+    def test_badkey(self):
+        sn = api.Session(auth.username, "bad_key")
+        with pytest.warns(UserWarning):
+            status = api.get_status(sn)
+        assert status["code"] == 401
+        assert status["error_message"] == "HTTPError, Code 401: Unauthorized"
 
 
 class TestSeason(object):
