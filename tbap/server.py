@@ -117,7 +117,7 @@ def httpdate_addsec(http_date, gmt=True):
     return datetime_to_httpdate(dtm_new, gmt)
 
 
-def send_http_request(session, args, mod_since=None, only_mod_since=None):
+def send_http_request(session, args, mod_since=None):
     url = session.TBA_URL
     for arg in args:
         url += "/" + str(arg)
@@ -125,8 +125,11 @@ def send_http_request(session, args, mod_since=None, only_mod_since=None):
     hdrs = {"X-TBA-Auth-Key": session.key,
             "X-TBA-App-Id": session.username + ":Tbap-Python-Package:0.9",
             "User-Agent": session.username + ":Tbap-Python-Package:0.9"}
-    req = urllib.request.Request(url, headers=hdrs)
+    if mod_since is not None and httpdate_to_datetime(mod_since, True):
+        hdrs["If-Modified-Since"] = mod_since
+
     data = {}
+    req = urllib.request.Request(url, headers=hdrs)
     try:
         with urllib.request.urlopen(req) as resp:
             data["code"] = resp.getcode()
@@ -136,16 +139,20 @@ def send_http_request(session, args, mod_since=None, only_mod_since=None):
                 data[key] = value
     except urllib.error.HTTPError as err:
         data["code"] = err.code
-        data["error_message"] = "HTTPError, Code {}: {}".format(err.code,
-                                                                err.reason)
+        data["url"] = err.url
         for key, value in err.headers.items():
             data[key] = value
-        warnings.warn(data["error_message"])
+        if err.code != 304:
+            data["error_message"] = "HTTPError, Code {}: {}".format(err.code,
+                                                                    err.reason)
+            warnings.warn(data["error_message"])
     except urllib.error.URLError as err:
         data["error_message"] = "URLError: {}".format(err.reason)
         warnings.warn(data["error_message"])
     finally:
         data["args"] = args
+        if "If-Modified-Since" in hdrs:
+            data["If-Modified-Since"] = hdrs["If-Modified-Since"]
     return data
 
 

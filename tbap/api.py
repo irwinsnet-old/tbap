@@ -1,84 +1,81 @@
 """
+The tbap package is designed to retrieve data from the Blue Alliance
+Read API and format that tdata as _Pandas_ dataframes. _Pandas_
+datagrames are a powerful tabular data structure that supports
+sorting and filtering, as well as many advanced data analysis
+techniques.
 
-Output of tbap Functions
-========================
+Users may also choose to have tbap functions provide data in the JSON
+formate, which is the format provided by the Blue Alliance Read API.
 
-The tbap package is designed to provide it's output as _Pandas_
-dataframes, a powerful tabular format that supports basic sorting and
-filtering, as well as many advanced data analysis techniques. By
-default, fapy functions provide a `pandas.DataFrame` object. The
-only difference
-between the `'Pandas.Dataframe'` and `server.DFrame` classes is that
-the DFrame has an _attr_ property that contains a python dictionary
-with TBA Read API metadata, such as the time the data was downloaded from
-the TBA Read API, and the URL used to obtain the data. Users can use the
-_Pandas_ module to manipulate ``server.DFrame`` objects just as they
-would ``Pandas.dataframe`` objects.
+License
+=======
 
-Fapy functions can also return Python dictionaries containing both
-the requested data in either XML or JSON format and metadata. To
-obtain XML or JSON data, set the `api.Session` objects data_format
-property to either "xml" or "json". The XML or JSON text will be
-available via the "text" key of the returned Python dictionary.
+The tbap package uses the BSD-3 license. The full text is available
+in the LICENSE file.
 
-Common fapy Function Arguments
+Copyright (c) 2017, Stacy Irwin
+
+Pandas Package: Copyright (c) 2008-2012, AQR Capital Management,
+LLC, Lambda Foundry, Inc. and PyData Development Team All rights
+reserved.
+
+Common Tbap Function Arguments
 ==============================
 
-Fapy functions that send HTTP requests to the TBA Read API all require
-many of the same arguments.
+There are several function arguments that occur in multiple tbap
+functions:
 
 **session**
-    An instance of ``fapy.classes.Session`` that contains a valid
-    username and authorization key. Other useful properties of
-    ``Session`` object include _season_ (2015, 2016, 2017, etc.)
-    and _data/_format_ ("dataframe", "xml", or "json"). The
-    _session_ argument is always required.
-
+    An instance of ``tbap.api.Session`` that contains a valid
+    username and authorization key. The ``Session`` object also a
+    _data/_format_ property that can be set to "dataframe" (default) or
+    "json". The _session_ argument is required for every function that
+    sends an http request to the Blue Alliance Read API server.
+**year**
+    Either a string or an integer. The year argument specifies the FRC
+    season as a four-digit year. Use the current year to obtain data on
+    the current FRC season, or past years to get data on prior seasons.
+    This argument can be either optional or required.
 **event**
-    A string containing a TBA Read API event code. Most fapy functions
-    apply only to a single event, therefore we must specify the FRC
-    event as an argument. For example, the event code for the Turing
-    subdivision at the Houston FIRST World Champiionships is "TURING",
-    and the event code for the district event in Mt. Vernon, WA is
+    A string containing a TBA Read API event key. The event key
+    contains both the competition year and an abbreviation
+    representing the event, which TBA calls an event code. For
+    example, "2017pnw" is the event key for the 2017 Pacific
+    Northwest district championships. An event key is requried
+    because many tbap functions return information on just a single
+    event.
+**response**
+    A string containing either "full" (default), "simple", or "keys".
+    If set to "simple", the function returns fewer columns of data. If
+    set to "keys", the function returns a single column of team key
+    values, e.g., "frc1318". If set to "full", the function will return
+    all columns of data that are available. This argument is always
+    optional.
+**mod_since**
+    A string containing an HTTP formatted date and time. This argument
+    is always optional. If specified, the Blue Alliance Read API
+    server will compare the date and time in the mod_since argument
+    to the date and time that the data was last updated on the Read
+    API server. If the data has not been updated since *mod_since*, the
+    Read API server will return no data and http code 304. Tbap
+    functions will return a Python dictionary object (regardless of
+    the value of the Session.data_format property) with code 304 and
+    no content. Users are encoraged to record the date and time
+    returned in the "Last-Modified" attribute and provide that value
+    in the mod_since attribute on subsequent requests for the same
+    data to reduce load on the Read API server.
 
-Pandas Liense Text
-==================
+Tbap Function Return Values
+===========================
 
-BSD 3-Clause License
-
-Copyright (c) 2008-2012, AQR Capital Management, LLC, Lambda Foundry,
-Inc. and PyData Development Team All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-
-* Redistributions of source code must retain the above copyright notice, this
-  list of conditions and the following disclaimer.
-
-* Redistributions in binary form must reproduce the above copyright notice,
-  this list of conditions and the following disclaimer in the documentation
-  and/or other materials provided with the distribution.
-
-* Neither the name of the copyright holder nor the names of its
-  contributors may be used to endorse or promote products derived from
-  this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 """
 import collections
 import datetime
 import json
 import re
+import warnings
 
 import numpy
 import pandas.io.json
@@ -89,110 +86,85 @@ import tbap.dframe as dframe
 
 
 def get_status(session):
-    """
+    """ Gets the status of the Blue Alliance Read API server.
 
     Args:
-        session:
-
+        session: (api.Session)
+            An object created with the api.Session() constructor.
     Returns:
-
+        Either a pandas.Dataframe object or a Python dictionary object.
     """
     http_args = ["status"]
     return send_request(session, http_args, "single_column")
 
 
-def send_request(session, http_args, normalize="table", mod_since=None,
-                 only_mod_since=None):
-    """Routes data request to correct internal functions.
+def get_districts(session, year=None, team=None, mod_since=None):
+    """
+    Retrieves information on FIRST districts.
 
     Args:
         session:
-            An instance of tbap.classes.Session that contains
-            a valid username and authorization key.
-        http_args:
-            A Python list of parameters that will be added to the http
-            request.
-        normalize (str):
-            Specifies which alorithm will be used to convert and
-            normalize the JSON data into a pandas dataframe.
+            An object created with the api.Session() constructor.
+        year (int or str):
+            The four digit year specifying the FRC season. Optional.
+        team (str):
+            FRC team number in format *frcNNNN*, e.g., "frc1318".
         mod_since:
             A string containing an HTTP formatted date and time.
-            Causes function to return None if no changes have been
-            made to the requested data since the date and time provided.
             Optional.
-        only_mod_since:
-            A string containing an HTTP formatted date and
-            time. Causes function to only return data that has
-            changed since the date and time provided. Optional.
 
     Returns:
-        Either a pandas.Dataframe object (if session.data_format =
-        "dataframe") or a Python dictionary.
-
+        Either a pandas.Dataframe object or a Python dictionary object.
     """
-    response = server.send_http_request(session, http_args)
-    if response["code"] != 200 or session.data_format != "dataframe":
-        return response
-    if normalize == "table":
-        frame = server.build_frame(response)
-    elif normalize == "single_column":
-        frame = dframe.build_single_column_frame(response["text"])
-    return server.attach_attributes(frame, response)
+    if year is None and team is not None:
+        http_args = ["team", team, "districts"]
+    elif year is not None and team is None:
+        http_args = ["districts", year]
+    else:
+        raise server.ArgumentError("Incorrect Arguments")
+    return send_request(session, http_args, "table", mod_since)
 
 
 def get_teams(session,  # pylint: disable=too-many-arguments
               page=None, year=None, event=None, district=None,
-              response="full",
-              mod_since=None, only_mod_since=None):
-    """Retrieves FRC teams from TBA Read API Server.
+              response="full", mod_since=None):
+    """Retrieves FRC teams from the TBA Read API Server.
 
     Args:
-        session:
-            An instance of tbap.classes.Session that contains
+        session (tbap.api.Session):
+            An instance of tbap.api.Session that contains
             a valid username and authorization key.
-        team:
-            FRC team number as a string. If listed, function will
-            return data only for that team. Optional.
-        event:
+        page (int):
+            get_teams() splits response data into several different
+            pages, each page containing a block of 1000 teams. The
+            page attribute specifies which page of teams to return.
+            Optional.
+        year (int or str):
+            Specifies for which year to return team data. Optional.
+        event (str):
             A string containing the TBA Read API event code. If
             included, function will return only teams that are
             competing in that event. Use tbap.api.get_events to lookup
             event codes. Optional.
-        district:
+        district (str):
             A string containing the TBA Read API district code. If
             included, function will only return teams that are
             competing in that event. Optional.
-        state:
-            A string containing the name of the U.S. state, spelled
-            out. If included, function will only return teams that are
-            located in that state.
-        page:
-            A string containing the requested page number. The FIRST
-            API splits long lists of teams into several pages and only
-            returns one page at a time. For XML and JSON data, if page
-            is omitted, the TBA Read API and this function will return
-            only the first page of data. Users can retrieve subsequent
-            pages of data by specifying a page number of '2' or higher.
-            This argument is not needed if the dataframe data_format is
-            requested becuase the function will request all pages of
-            data and combine them into one dataframe. Optional.
+        response (str):
+            Either "full" (default), "simple", or "keys". Optional.
         mod_since:
             A string containing an HTTP formatted date and time.
-            Causes function to return None if no changes have been
-            made to the requested data since the date and time provided.
             Optional.
-        only_mod_since:
-            A string containing an HTTP formatted date and
-            time. Causes function to only return data that has
-            changed since the date and time provided. Optional.
 
     Returns:
-        If session.data_format == "json" or "xml", returns a Python
-        dictionary object containing the response text and additional
-        metadata. If session.data_format == "dataframe", returns an instances
-        of tbap.server.Dframe, which is a Pandas dataframe with
-        an additional `attr` property that contains a Python dictionary
-        with additional metadata.
+        A pandas.Dataframe object or a Python dictionary object.
+
+    Raises:
+        tbap.Classes.ArgumentError:
+            For the *page*, *year*, *event*, and *district* arguments,
+            *year* can only be specified if *page* is also specified.
+            Otherwise, one and only one of these four arguments can be
+            specified, or `get_teams()` raises an ArugumentError.
     """
 
     # Check for un-allowed combinations of arguments
@@ -204,73 +176,83 @@ def get_teams(session,  # pylint: disable=too-many-arguments
             (district is None)):
         http_args = ["teams", year, page]
     elif ((district is not None) and (year is None) and (event is None) and
-              (page is None)):
+            (page is None)):
         http_args = ["district", district, "teams"]
     elif ((event is not None) and (year is None) and (district is None) and
-              (page is None)):
+            (page is None)):
         http_args = ["event", event, "teams"]
     else:
         raise server.ArgumentError("Incorrect Arguments")
     if response.lower() in ["simple", "keys"]:
         http_args.append(response.lower())
-    return send_request(session, http_args, mod_since, only_mod_since)
+    results = send_request(session, http_args, "table", mod_since)
+    if response == "keys":
+        results.columns = ["team"]
+    return results
 
 
-def get_team(session, team, response = "full", mod_since=None,
-             only_mod_since=None):
+def get_team(session, team, response="full", mod_since=None):
+    """Retrieves information about a single FRC team.
+
+    Args:
+        session (tbap.api.Session):
+            An instance of tbap.api.Session that contains
+            a valid username and authorization key.
+        team (str):
+            FRC team number in format *frcNNNN*, e.g., "frc1318".
+        response (str):
+            Either "full" (default), "simple", "years_participated", or
+            "robots". Optional.
+        mod_since:
+            A string containing an HTTP formatted date and time.
+            Optional.
+
+    Returns:
+        A pandas.Dataframe object or a Python dictionary object.
+    """
     http_args = ["team", team]
     if response.lower() in ["simple", "years_participated", "robots"]:
         http_args.append(response.lower())
-    return send_request(session, http_args, mod_since, only_mod_since)
+    results = send_request(session, http_args, "table", mod_since)
+    if response == "years_participated":
+        results.columns = ["year"]
+    return results
 
 
 def get_events(session,  # pylint: disable=too-many-arguments
                year=None, district=None, team=None, event=None, response="full",
-               mod_since=None, only_mod_since=None):
+               mod_since=None):
     """Retrieves information on one or more FRC competitions.
 
     Args:
-        session:
-            An instance of tbap.classes.Session that contains
+        session (tbap.api.Session):
+            An instance of tbap.api.Session that contains
             a valid username and authorization key.
-        event:
-            A string containing a FIRST event code.
-        team:
+        year (int or str):
+            Specifies for which year to return team data. Optional.
+        district (str):
+            A string containing the TBA Read API district code. If
+            included, function will only return teams that are
+            competing in that event. Optional.
+        team (str):
             The four digit FRC team number as an integer.
-        district:
-            A string containing the FIRST district code, such as
-            "PNW" for the Pacific Northwest district. Results will be
-            filtered to the events occurring in that district. Use
-            `districts()` to retrieve all district codes.
-        exclude_district:
-            A Boolean value. If True, filters results to
-            events that are not affiliated with a district.
-        mod_since:
+        event (str):
+            A key value specifying the competition year and event.
+        response (str):
+            Either "full" (default), "simple", or "keys". Optional.
+        mod_since (str):
             A string containing an HTTP formatted date and time.
-            Causes function to return None if no changes have been
-            made to the requested data since the date and time provided.
             Optional.
-        only_mod_since:
-            A string containing an HTTP formatted date and
-            time. Causes function to only return data that has
-            changed since the date and time provided. Optional.
 
     Returns:
-        If session.data_format == "json" or "xml", returns a Python
-        dictionary object containing the response text and additional
-        metadata. If session.data_format == "dataframe", returns an instances
-        of tbap.server.Dframe, which is a Pandas dataframe with
-        an additional `attr` property that contains a Python dictionary
-        with additional metadata.
+        A pandas.Dataframe object or a Python dictionary object.
 
     Raises:
         tbap.Classes.ArgumentError:
-            If the `event` argument is specified and any other
-            argument is specified in addition to `event` (i.e.,
-            if `event` is specified, no other arguments should be
-            used).
-            If both the `district` and `exclude_district` arguments
-            are specified (i.e., use one or the other but not both).
+            For the *team*, *year*, *event*, and *district* arguments,
+            *year* can only be specified if *team* is also specified.
+            Otherwise, one and only one of these four arguments can be
+            specified, or `get_teams()` raises an ArugumentError.
     """
 
     # Check for un-allowed combinations of arguments
@@ -292,43 +274,52 @@ def get_events(session,  # pylint: disable=too-many-arguments
         raise server.ArgumentError("Incorrect Arguments")
     if response.lower() in ["simple", "keys"]:
         http_args.append(response.lower())
-    return send_request(session, http_args, mod_since, only_mod_since)
-
-
-def get_rankings(session, district, mod_since=None, only_mod_since=None):
-    """Retrieves the team rankings based on the qualification rounds.
-
-    Args:
-        session:
-            An instance of tbap.classes.Session that contains
-            a valid username and authorization key.
-        event:
-            A string containing the TBA Read API event code.
-        team:
-            FRC team number as a string. If listed, function will
-            return data only for that team. Optional.
-        top:
-            The number of top-ranked teams to return in the result.
-            Optional. Default is to return all teams at the event.
-        mod_since:
-            A string containing an HTTP formatted date and time.
-            Causes function to return None if no changes have been
-            made to the requested data since the date and time provided.
-            Optional.
-        only_mod_since:
-            A string containing an HTTP formatted date and
-            time. Causes function to only return data that has
-            changed since the date and time provided. Optional.
-
-    Returns:
-
-    """
-    http_args = ["district", district, "rankings"]
-    return send_request(session, http_args, mod_since, only_mod_since)
+    results = send_request(session, http_args, "table", mod_since)
+    if response == "keys":
+        results.columns = ["key"]
+    return results
 
 
 def get_matches(session, event=None, team=None, year=None, match=None,
-                response="full", mod_since=None, only_mod_since=None):
+                response="full", mod_since=None):
+    """Returns detailed information on competition matches.
+
+    The allowed combinations of optional arguments are *event*,
+    *team* and *event*, *team* and *year*, and *match*. This function
+    will raise an error if any other combinations of arguments are
+    provided.
+
+    Args:
+        session (tbap.api.Session):
+            An instance of tbap.api.Session that contains
+            a valid username and authorization key.
+        event (str):
+            A key value specifying the competition year and event.
+        team (str):
+            The four digit FRC team number as an integer.
+        year (int or str):
+            Specifies for which year to return team http_data. Optional.
+        match (str):
+            The key value for the desired match. The key value has the
+            format "YYYY{EventCode}_{CompetitionLevel}NNN" where YYYY
+            is the four digit year and NN is the match number with no
+            leading zeros. For example, *2017wasno_qm79* is the 79th
+            qualification match at the 2017 district competition at
+            Glacier Peak High School in Snohomish, WA.
+        response (str):
+            Either "full" (default), "simple", or "keys". Optional.
+        mod_since (str):
+            A string containing an HTTP formatted date and time.
+            Optional.
+
+    Returns:
+        A pandas.Dataframe object or a Python dictionary object.
+
+    Raises:
+        tbap.Classes.ArgumentError: If any unallowed combinations of
+        arguments are provided to the function.
+
+    """
     if event is not None and team is None and year is None and match is None:
         http_args = ["event", event, "matches"]
     elif (team is not None and event is not None and year is None and
@@ -344,16 +335,17 @@ def get_matches(session, event=None, team=None, year=None, match=None,
         raise server.ArgumentError("Incorrect Arguments")
     if response.lower() in ["simple", "keys"]:
         http_args.append(response.lower())
-    data = server.send_http_request(session, http_args, mod_since,
-                                    only_mod_since)
+    http_data = server.send_http_request(session, http_args, mod_since)
     if session.data_format != "dataframe":
-        return data
+        return http_data
 
     if response.lower() == "keys":
-        return server.build_frame(data)
+        df = server.build_frame(http_data)
+        df.columns = ["key"]
+        return server.attach_attributes(df, http_data)
 
     # Convert nested JSON text into a flat dataframe
-    jdata = json.loads(data["text"])
+    jdata = json.loads(http_data["text"])
     if not isinstance(jdata, list):
         jdata = [jdata]  # TBA returns single match when match arg used
     flat_match = {}
@@ -372,29 +364,34 @@ def get_matches(session, event=None, team=None, year=None, match=None,
         for col in jdata[0]["score_breakdown"]["blue"].keys():
             flat_match["*" + col] = []
 
-    def append_match_data(mtch, team, alliance, surrogate):
+    def append_match_data(mtch, team_key, alliance, surrogate):
+        # Skip appending if no score has been reported for match.
+        if mtch["score_breakdown"] is None:
+            warnings.warn("No score data for match {}.".format(mtch["key"]))
+            return
+
         for key in flat_match.keys():
             if key[0:1] not in ["_", "*"]:
                 flat_match[key].append(mtch[key])
             elif key[0:1] == "*":
                 flat_match[key].append(
                     mtch["score_breakdown"][alliance][key[1:]])
-        flat_match["_team_key"].append(team)
+        flat_match["_team_key"].append(team_key)
         flat_match["_alliance"].append(alliance)
         flat_match["_surrogate"].append(surrogate)
         if "_videos" in flat_match:
             flat_match["_videos"].append(str(mtch["videos"]))
         flat_match["_score"].append(mtch["alliances"][alliance]["score"])
 
-    for mtch in jdata:
-        for team in mtch["alliances"]["blue"]["team_keys"]:
-            append_match_data(mtch, team, "blue", False)
-        for team in mtch["alliances"]["blue"]["surrogate_team_keys"]:
-            append_match_data(mtch, team, "blue", True)
-        for team in mtch["alliances"]["red"]["team_keys"]:
-            append_match_data(mtch, team, "red", False)
-        for team in mtch["alliances"]["red"]["surrogate_team_keys"]:
-            append_match_data(mtch, team, "red", True)
+    for indv_match in jdata:
+        for team in indv_match["alliances"]["blue"]["team_keys"]:
+            append_match_data(indv_match, team, "blue", False)
+        for team in indv_match["alliances"]["blue"]["surrogate_team_keys"]:
+            append_match_data(indv_match, team, "blue", True)
+        for team in indv_match["alliances"]["red"]["team_keys"]:
+            append_match_data(indv_match, team, "red", False)
+        for team in indv_match["alliances"]["red"]["surrogate_team_keys"]:
+            append_match_data(indv_match, team, "red", True)
 
     # Convert Unix timestamps to human readable time strings
     def to_time(timestamp):
@@ -415,47 +412,38 @@ def get_matches(session, event=None, team=None, year=None, match=None,
     if response == "full":
         order = (order + ["videos", "post_result_time"] +
                  list(jdata[0]["score_breakdown"]["blue"].keys()))
-    return df[order]
+    return server.attach_attributes(df[order], http_data)
 
 
-def get_districts(session, team=None, year=None, mod_since=None,
-                  only_mod_since=None):
-    """
-    Retrieves information on FIRST districts.
+def get_rankings(session, district, mod_since=None):
+    """Retrieves the team rankings based on the qualification rounds.
 
     Args:
         session:
             An instance of tbap.classes.Session that contains
             a valid username and authorization key.
+        event:
+            A key value specifying the competition year and event.
+        team:
+            FRC team number as a string. If listed, function will
+            return data only for that team. Optional.
+        top:
+            The number of top-ranked teams to return in the result.
+            Optional. Default is to return all teams at the event.
         mod_since:
             A string containing an HTTP formatted date and time.
             Causes function to return None if no changes have been
             made to the requested data since the date and time provided.
             Optional.
-        only_mod_since:
-            A string containing an HTTP formatted date and
-            time. Causes function to only return data that has
-            changed since the date and time provided. Optional.
 
     Returns:
-        If session.data_format == "json" or "xml", returns a Python
-        dictionary object containing the response text and additional
-        metadata. If session.data_format == "dataframe", returns an instances
-        of tbap.classes.http.FirstDf, which is a Pandas dataframe with
-        an additional `attr` property that contains a Python dictionary
-        with additional metadata.
+
     """
-    if year is None and team is not None:
-        http_args = ["team", team, "districts"]
-    elif year is not None and team is None:
-        http_args = ["districts", year]
-    else:
-        raise server.ArgumentError("Incorrect Arguments")
-    return send_request(session, http_args, mod_since, only_mod_since)
+    http_args = ["district", district, "rankings"]
+    return send_request(session, http_args, mod_since)
 
 
-def get_awards(session, event=None, team=None, year=None, mod_since=None,
-               only_mod_since=None):
+def get_awards(session, event=None, team=None, year=None, mod_since=None):
     if event is None and team is not None and year is not None:
         http_args = ["team", team, "awards", year]
     elif team is not None and event is None and year is None:
@@ -464,14 +452,13 @@ def get_awards(session, event=None, team=None, year=None, mod_since=None,
         http_args = ["team", team, "event", event, "awards"]
     else:
         raise server.ArgumentError("Incorrect Arguments")
-    return send_request(session, http_args, mod_since, only_mod_since)
+    return send_request(session, http_args, mod_since)
 
 
-def get_alliances(session, event, mod_since=None, only_mod_since=None):
+def get_alliances(session, event, mod_since=None):
     http_args = ["event", event, "alliances"]
 
-    data = server.send_http_request(session, http_args, mod_since,
-                                    only_mod_since)
+    data = server.send_http_request(session, http_args, mod_since)
     if session.data_format != "dataframe":
         return data
 
@@ -523,11 +510,10 @@ def get_alliances(session, event, mod_since=None, only_mod_since=None):
     return pandas.DataFrame(alli_dct).set_index(["name", "team"])
 
 
-def get_insights(session, event, mod_since=None, only_mod_since=None):
+def get_insights(session, event, mod_since=None):
     http_args = ["event", event, "insights"]
 
-    data = server.send_http_request(session, http_args, mod_since,
-                                    only_mod_since)
+    data = server.send_http_request(session, http_args, mod_since)
     if session.data_format != "dataframe":
         return data
 
@@ -547,10 +533,9 @@ def get_insights(session, event, mod_since=None, only_mod_since=None):
     return pandas.DataFrame(rows).set_index(["level", "statistic"])
 
 
-def get_oprs(session, event, mod_since=None, only_mod_since=None):
+def get_oprs(session, event, mod_since=None):
     http_args = ["event", event, "oprs"]
-    data = server.send_http_request(session, http_args, mod_since,
-                                    only_mod_since)
+    data = server.send_http_request(session, http_args, mod_since)
     if session.data_format != "dataframe":
         return data
 
@@ -565,10 +550,9 @@ def get_oprs(session, event, mod_since=None, only_mod_since=None):
     return pandas.DataFrame(cols)
 
 
-def get_predictions(session, event, mod_since=None, only_mod_since=None):
+def get_predictions(session, event, mod_since=None):
     http_args = ["event", event, "predictions"]
-    data = server.send_http_request(session, http_args, mod_since,
-                                    only_mod_since)
+    data = server.send_http_request(session, http_args, mod_since)
     if session.data_format != "dataframe":
         return data
 
@@ -634,11 +618,9 @@ def get_predictions(session, event, mod_since=None, only_mod_since=None):
             "team_rankings": rank_frame, "team_stats": teams_frame}
 
 
-def get_event_team_status(session, event, team, series=False, mod_since=None,
-                          only_mod_since=None):
+def get_event_team_status(session, event, team, series=False, mod_since=None):
     http_args = ["team", team, "event", event, "status"]
-    data = server.send_http_request(session, http_args, mod_since,
-                                    only_mod_since)
+    data = server.send_http_request(session, http_args, mod_since)
     if session.data_format != "dataframe":
         return data
     jdata = json.loads(data["text"])
@@ -655,10 +637,9 @@ def get_event_team_status(session, event, team, series=False, mod_since=None,
 # TODO(stacy.irwin) Replace spaces in key names with underscores
 
 
-def get_event_rankings(session, event, mod_since=None, only_mod_since=None):
+def get_event_rankings(session, event, mod_since=None):
     http_args = ["event", event, "rankings"]
-    data = server.send_http_request(session, http_args, mod_since,
-                                    only_mod_since)
+    data = server.send_http_request(session, http_args, mod_since)
     if session.data_format != "dataframe":
         return data
 
@@ -690,10 +671,9 @@ def get_event_rankings(session, event, mod_since=None, only_mod_since=None):
     return df[sorted_cols + other_cols]
 
 
-def get_district_points(session, event, mod_since=None, only_mod_since=None):
+def get_district_points(session, event, mod_since=None):
     http_args = ["event", event, "district_points"]
-    data = server.send_http_request(session, http_args, mod_since,
-                                    only_mod_since)
+    data = server.send_http_request(session, http_args, mod_since)
     if session.data_format != "dataframe":
         return data
 
@@ -718,10 +698,9 @@ def get_district_points(session, event, mod_since=None, only_mod_since=None):
     return {"points": df_points, "high_scores": df_high_scores}
 
 
-def get_media(session, team, year, mod_since=None, only_mod_since=None):
+def get_media(session, team, year, mod_since=None):
     http_args = ["team", team, "media", str(year)]
-    data = server.send_http_request(session, http_args, mod_since,
-                                    only_mod_since)
+    data = server.send_http_request(session, http_args, mod_since)
     if session.data_format != "dataframe":
         return data
 
@@ -730,16 +709,50 @@ def get_media(session, team, year, mod_since=None, only_mod_since=None):
     return pandas.io.json.json_normalize(jdata)
 
 
-def get_social_media(session, team, mod_since=None, only_mod_since=None):
+def get_social_media(session, team, mod_since=None):
     http_args = ["team", team, "social_media"]
-    data = server.send_http_request(session, http_args, mod_since,
-                                    only_mod_since)
+    data = server.send_http_request(session, http_args, mod_since)
     if session.data_format != "dataframe":
         return data
 
     jdata = json.loads(data["text"])
 
     return pandas.io.json.json_normalize(jdata)
+
+
+def send_request(session, http_args, normalize, mod_since=None):
+    """Routes data request to correct internal functions.
+
+    Args:
+        session:
+            An instance of tbap.classes.Session that contains
+            a valid username and authorization key.
+        http_args:
+            A Python list of parameters that will be added to the http
+            request.
+        normalize (str):
+            Specifies which alorithm will be used to convert and
+            normalize the JSON data into a pandas dataframe.
+        mod_since:
+            A string containing an HTTP formatted date and time.
+            Causes function to return None if no changes have been
+            made to the requested data since the date and time provided.
+            Optional.
+
+    Returns:
+        Either a pandas.Dataframe object (if session.data_format =
+        "dataframe") or a Python dictionary.
+
+    """
+    response = server.send_http_request(session, http_args, mod_since)
+    if session.data_format != "dataframe" or response["code"] == 304:
+        return response
+    else:
+        if normalize == "table":
+            frame = server.build_frame(response)
+        elif normalize == "single_column":
+            frame = dframe.build_single_column_frame(response["text"])
+    return server.attach_attributes(frame, response)
 
 
 # noinspection PyAttributeOutsideInit

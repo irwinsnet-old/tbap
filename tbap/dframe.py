@@ -31,3 +31,4 @@ def build_single_column_frame(data, series=False):
                              index=map(lambda x: x[0], s_list))
     else:
         return pandas.DataFrame(rows).set_index(["label"])
+
