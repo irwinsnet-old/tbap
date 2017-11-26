@@ -80,6 +80,7 @@ import warnings
 import numpy
 import pandas.io.json
 import pandas
+import pytz
 
 import tbap.server as server
 import tbap.dframe as dframe
@@ -313,12 +314,13 @@ def get_matches(session, event=None, team=None, year=None, match=None,
             Optional.
 
     Returns:
-        A pandas.Dataframe object or a Python dictionary object.
+        A pandas.Dataframe object or a Python dictionary object. All
+        columnes with time data contain pandas.Timestamp objects. All
+        times are in universal coordinated time (UTC).
 
     Raises:
         tbap.Classes.ArgumentError: If any unallowed combinations of
         arguments are provided to the function.
-
     """
     if event is not None and team is None and year is None and match is None:
         http_args = ["event", event, "matches"]
@@ -348,71 +350,46 @@ def get_matches(session, event=None, team=None, year=None, match=None,
     jdata = json.loads(http_data["text"])
     if not isinstance(jdata, list):
         jdata = [jdata]  # TBA returns single match when match arg used
-    flat_match = {}
-    for col in jdata[0].keys():
-        if (not isinstance(jdata[0][col], list) and
-                not isinstance(jdata[0][col], dict)):
-            flat_match[col] = []
-    flat_match["_alliance"] = []
-    flat_match["_team_key"] = []
-    flat_match["_surrogate"] = []
-    flat_match["_score"] = []
-    if "videos" in jdata[0]:
-        flat_match["_videos"] = []
 
-    if "score_breakdown" in jdata[0]:
-        for col in jdata[0]["score_breakdown"]["blue"].keys():
-            flat_match["*" + col] = []
+    def extract_match(mtch, team_key, alliance, surrogate):
+        output = collections.OrderedDict(
+            [("team_key", team_key),
+             ("alliance", alliance),
+             ("surrogate", surrogate),
+             ("score", mtch["alliances"][alliance]["score"])])
+        if team_key in mtch["alliances"][alliance]["dq_team_keys"]:
+            output["disqualified"] = True
+        else:
+            output["disqualified"] = False
+        for key, val in mtch.items():
+            if not isinstance(val, list) and not isinstance(val, dict):
+                output[key] = val
+        if "score_breakdown" in mtch and mtch["score_breakdown"] is not None:
+            for key, val in mtch["score_breakdown"][alliance].items():
+                output[key] = val
+        return output
 
-    def append_match_data(mtch, team_key, alliance, surrogate):
-        # Skip appending if no score has been reported for match.
-        if mtch["score_breakdown"] is None:
-            warnings.warn("No score data for match {}.".format(mtch["key"]))
-            return
-
-        for key in flat_match.keys():
-            if key[0:1] not in ["_", "*"]:
-                flat_match[key].append(mtch[key])
-            elif key[0:1] == "*":
-                flat_match[key].append(
-                    mtch["score_breakdown"][alliance][key[1:]])
-        flat_match["_team_key"].append(team_key)
-        flat_match["_alliance"].append(alliance)
-        flat_match["_surrogate"].append(surrogate)
-        if "_videos" in flat_match:
-            flat_match["_videos"].append(str(mtch["videos"]))
-        flat_match["_score"].append(mtch["alliances"][alliance]["score"])
-
+    matches = []
     for indv_match in jdata:
         for team in indv_match["alliances"]["blue"]["team_keys"]:
-            append_match_data(indv_match, team, "blue", False)
+            matches.append(extract_match(indv_match, team, "blue", False))
         for team in indv_match["alliances"]["blue"]["surrogate_team_keys"]:
-            append_match_data(indv_match, team, "blue", True)
+            matches.append(extract_match(indv_match, team, "blue", True))
         for team in indv_match["alliances"]["red"]["team_keys"]:
-            append_match_data(indv_match, team, "red", False)
+            matches.append(extract_match(indv_match, team, "red", False))
         for team in indv_match["alliances"]["red"]["surrogate_team_keys"]:
-            append_match_data(indv_match, team, "red", True)
+            matches.append(extract_match(indv_match, team, "red", True))
 
-    # Convert Unix timestamps to human readable time strings
-    def to_time(timestamp):
-        if isinstance(timestamp, int):
-            return datetime.datetime.fromtimestamp(timestamp).isoformat(" ")
-        else:
-            return numpy.nan
-    for col in [tcl for tcl in flat_match.keys() if tcl[-4:] == "time"]:
-        iso_time = list(map(to_time, flat_match[col]))
-        flat_match[col] = iso_time
+    df = pandas.DataFrame(matches)
+    if "score_breakdown" in df.columns:
+        df.drop("score_breakdown", 1, inplace=True)
 
-    df = pandas.DataFrame(flat_match)
-    df.columns=map(lambda x: re.sub(r"^[*|_]", "", x), df.columns)
+    for col in [x for x in df.columns if re.search("time$", x) is not None]:
+        ts = pandas.to_datetime(df[col], unit="s")
+        df[col] = ts.dt.tz_localize("UTC").dt.tz_convert(session.time_zone)
 
-    order = ["key", "comp_level", "set_number", "match_number",
-             "predicted_time", "team_key", "surrogate", "alliance",
-             "winning_alliance", "score", "time", "actual_time", "event_key"]
-    if response == "full":
-        order = (order + ["videos", "post_result_time"] +
-                 list(jdata[0]["score_breakdown"]["blue"].keys()))
-    return server.attach_attributes(df[order], http_data)
+    return server.attach_attributes(df, http_data,
+                                    {"timezone": str(session.time_zone)})
 
 
 def get_rankings(session, district, mod_since=None):
@@ -763,42 +740,78 @@ class Session:
     requires a Session object as the first parameter. The Session
     object contains the TBA Read API username, authorization key, and
     competition season, as well as specifies the format of the returned
-    data and whether the HTTP request should be sent to the production
-    or staging TBA Read API servers.
-    """
-    # pylint: disable=too-many-instance-attributes
+    data.
 
+    Attributes:
+        username: (str)
+            The blue alliance account username.
+        key: (str)
+            The authorization key assigned by The Blue Alliance.
+        data_format:(str)
+            Specifies the format of the data that will be returned by
+            firstApiPY that submit HTTP requests. The allowed values
+            are *dataframe* (Pandas dataframe) and *json*.
+
+            Raises ``TypeError`` if set to type other than String.
+            Raises ``ValueError`` if set to type other than
+            *dataframe*, or *json*.
+        time_zone: (str)
+            A string specifying the desired time zone for displaying
+            dates and times. The Blue Allinance provides all times in
+            universal coordinated time (UTC). tbap converts the UTC
+            times to the local time specified by this time zone
+            setting.  Only official time zone names as specified by
+            the ICANN Time Zone Database are accepted. For a list of
+            acceptable time zone names, call `api.list_timezones()`.
+            Other common time zone settings are "America/New_York",
+            "America/Chicago", "America/Denver", "America/Alaska",
+            and "America/Hawaii".
+
+    Class Attributes:
+        TBA_URL: (str)
+            The URL of the Blue Alliance API.
+        TBA_API_VERSION: (str)
+            The BLUE API version.
+        PACKAGE_VERSION: (str)
+            The tbap package version.
+        USER_AGENT_NAME: (str)
+            A short description of the tbap package that is passed to
+            the Blue Alliance API via the *User_Agent* header.
+        DEFAULT_TIME_ZONE: (str)
+            The time zone that will be used if no time zone is
+            specified when creating an `api.Session` object.
+    """
     TBA_URL = "https://www.thebluealliance.com/api/v3"
     TBA_API_VERSION = "v3.0"
     PACKAGE_VERSION = "0.9"
     USER_AGENT_NAME = "tbap: Version" + PACKAGE_VERSION
+    DEFAULT_TIME_ZONE = "America/Los_Angeles"
 
-    def __init__(self, username, key, data_format="dataframe"):
+    def __init__(self, username, key, data_format="dataframe",
+                 time_zone=DEFAULT_TIME_ZONE):
         """Creates a ``Session`` object.
 
         Args:
             username: (str)
-                TBA Read API username
+                The blue alliance account username.
             key: (str)
-                TBA Read API authorization key
-            data_format:(str)
-                Specifies the format of the data that will be returned
-                by firstApiPY that submit HTTP requests. The allowed
-                values are *dataframe* (Pandas dataframe) and *json*.
-                Optional, defaults to *dataframe*.
+                The authorization key assigned by The Blue Alliance.
+            data_format: (str)
+                Either "dataframe" or "json". Optional, defaults to
+                *dataframe*.
+            time_zone: (pytz timezone object)
+                Times in Pandas dataframes will be converted to this
+                timezone. Optional. Default is "America/Los_Angeles".
+                username: (str)
         """
 
         self.username = username
         self.key = key
         self.data_format = data_format
+        self.time_zone = time_zone
 
     @property
     def key(self):
-        """The account authorization key that is assigned by TBA Read API.
-
-        *Type:* String
-
-        """
         return self._key
 
     @key.setter
@@ -811,11 +824,6 @@ class Session:
 
     @property
     def username(self):
-        """The account authorization key that is assigned by TBA Read API.
-
-        *Type:* String
-
-        """
         return self._username
 
     @username.setter
@@ -828,15 +836,6 @@ class Session:
 
     @property
     def data_format(self):
-        """String specifying format of output from tbap functions.
-
-        *Type:* String
-
-        *Raises:*
-            * ``TypeError`` if set to type other than String.
-            * ``ValueError`` if other than *dataframe*, *json*, or
-              *xml*.
-        """
         return self._data_format
 
     @data_format.setter
@@ -851,3 +850,22 @@ class Session:
         else:
             self._data_format = data_format.lower()  # pylint: disable=W0201
             # pylint W0201: attribute-defined-outside-init
+
+    @property
+    def time_zone(self):
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, zone):
+        if isinstance(zone, str):
+            self._time_zone = pytz.timezone(zone)
+        elif hasattr(zone, "tzname") and zone.tzname in pytz.all_timezones:
+            self._time_zone = zone
+        else:
+            raise TypeError("'zone' argument must be a string containing a pytz"
+                            "compliant time zone name or a pytz time zone"
+                            "object.")
+
+
+def list_timezones():
+    return pytz.common_timezones()

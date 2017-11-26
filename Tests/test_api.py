@@ -56,6 +56,16 @@ class CheckResults(object):
         assert server.httpdate_to_datetime(result["If-Modified-Since"])
         assert result["If-Modified-Since"] == mod_time
 
+    @staticmethod
+    def timestampe(ts, year, month, day, hour, minute, second, offset):
+        assert ts.year == year
+        assert ts.month == month
+        assert ts.day == day
+        assert ts.hour == hour
+        assert ts.minute == minute
+        assert ts.second == second
+        assert ts.utcoffset().seconds == offset
+
 
 class TestStatus(object):
 
@@ -204,12 +214,14 @@ class TestMatches(object):
         CheckResults.frame(matches, tdata)
 
     def test_event_simple(self):
-        sn = api.Session(auth.username, auth.key)
+        sn = api.Session(auth.username, auth.key, time_zone="America/Chicago")
         matches = api.get_matches(sn, "2017tur", response="simple")
-        tdata = {"shape": (770, 13),
+        tdata = {"shape": (770, 14),
                  "args": ["event", "2017tur", "matches", "simple"],
-                 "spotcheck": (2, "predicted_time", "2017-04-22 10:19:01")}
+                 "spotcheck": (2, "score", 503)}
         CheckResults.frame(matches, tdata)
+        CheckResults.timestampe(matches.time[0], 2017, 4, 22, 12, 0, 0, 68400)
+        assert matches.attr["timezone"] == "America/Chicago"
 
     def test_event_keys(self):
         sn = api.Session(auth.username, auth.key)
@@ -223,7 +235,7 @@ class TestMatches(object):
         sn = api.Session(auth.username, auth.key)
         matches = api.get_matches(sn, "2017tur", team="frc1318",
                                   response="simple")
-        tdata = {"shape": (102, 13),
+        tdata = {"shape": (102, 14),
                  "args": ["team", "frc1318", "event", "2017tur", "matches",
                           "simple"],
                  "spotcheck": (55, "team_key", "frc2046")}
@@ -232,11 +244,21 @@ class TestMatches(object):
     def test_team_year_full(self):
         sn = api.Session(auth.username, auth.key)
         matches = api.get_matches(sn, team="frc1318", year="2017")
-        assert True
-        # tdata = {"shape": (102, 13),
-        #          "args": ["team", "frc1318", "event", "2017tur", "matches",
-        #                   "simple"],
-        #          "spotcheck": (55, "team_key", "frc2046")}
+        tdata = {"shape": (642, 49),
+                 "args": ["team", "frc1318", "matches", "2017"],
+                 "spotcheck": (641, "score", 259)}
+        CheckResults.frame(matches, tdata)
+
+    def test_team_match(self):
+        sn = api.Session(auth.username, auth.key)
+        matches = api.get_matches(sn, match="2017wasno_qm79")
+        # tdata = {"shape": (6, 49),
+        #          "args": ["team", "frc1318", "matches", "2017"],
+        #          "spotcheck": (641, "score", 259)}
+        # CheckResults.frame(matches, tdata)
+
+        print(matches["time"])
+
 
 # Old stuff after this line ====================================================
 

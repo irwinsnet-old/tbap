@@ -21,6 +21,8 @@ import warnings
 
 import pandas
 from pandas.io import json as pj
+import dateutil.tz
+import pytz
 
 #todo(stacy.irwin): accept integer arguments for team numbers, start, end, etc.
 #todo(stacy.irwin): Rewrite build_url so it doesn't know about season or status.
@@ -324,10 +326,13 @@ def build_frame(response):
     return attach_attributes(dframe, response)
 
 
-def attach_attributes(dframe, response):
+def attach_attributes(dframe, response, additional=None):
     dframe.attr = {}
     for key, val in response.items():
         dframe.attr[key] = val
+    if isinstance(additional, dict):
+        for key, val in additional.items():
+            dframe.attr[key] = val
     return dframe
 
 
@@ -459,3 +464,4 @@ class Dframe(pandas.DataFrame):
     @attr.setter
     def attr(self, attr):
         self._attr = attr
+
