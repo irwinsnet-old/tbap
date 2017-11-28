@@ -392,35 +392,53 @@ def get_matches(session, event=None, team=None, year=None, match=None,
                                     {"timezone": str(session.time_zone)})
 
 
-def get_rankings(session, district, mod_since=None):
+def get_district_rankings(session, district, mod_since=None):
     """Retrieves the team rankings based on the qualification rounds.
 
     Args:
-        session:
-            An instance of tbap.classes.Session that contains
+        session (tbap.api.Session):
+            An instance of tbap.api.Session that contains
             a valid username and authorization key.
-        event:
-            A key value specifying the competition year and event.
-        team:
-            FRC team number as a string. If listed, function will
-            return data only for that team. Optional.
-        top:
-            The number of top-ranked teams to return in the result.
-            Optional. Default is to return all teams at the event.
-        mod_since:
+        district (str):
+            A string containing the TBA Read API district code. If
+            included, function will only return teams that are
+            competing in that event. Optional.
+        mod_since (str):
             A string containing an HTTP formatted date and time.
-            Causes function to return None if no changes have been
-            made to the requested data since the date and time provided.
             Optional.
 
     Returns:
-
+        A pandas.Dataframe object or a Python dictionary object.
     """
     http_args = ["district", district, "rankings"]
-    return send_request(session, http_args, mod_since)
+    df = send_request(session, http_args, "table", mod_since)
+    results = df.loc[:, ["rank", "team_key", "point_total", "rookie_bonus",
+                         "event_key", "district_cmp", "total", "qual_points",
+                         "alliance_points", "elim_points", "award_points"]]
+    results.attr = df.attr
+    return results
 
 
 def get_awards(session, event=None, team=None, year=None, mod_since=None):
+    """
+
+    Args:
+        session (tbap.api.Session):
+            An instance of tbap.api.Session that contains
+            a valid username and authorization key.
+        event (str):
+            A key value specifying the competition year and event.
+        team (str):
+            The four digit FRC team number as an integer.
+        year (int or str):
+            Specifies for which year to return team http_data. Optional.
+        mod_since (str):
+            A string containing an HTTP formatted date and time.
+            Optional.
+    Returns:
+        A pandas.Dataframe object or a Python dictionary object.
+
+    """
     if event is None and team is not None and year is not None:
         http_args = ["team", team, "awards", year]
     elif team is not None and event is None and year is None:

@@ -57,7 +57,7 @@ class CheckResults(object):
         assert result["If-Modified-Since"] == mod_time
 
     @staticmethod
-    def timestampe(ts, year, month, day, hour, minute, second, offset):
+    def timestamp(ts, year, month, day, hour, minute, second, offset):
         assert ts.year == year
         assert ts.month == month
         assert ts.day == day
@@ -72,10 +72,13 @@ class TestStatus(object):
     def test_status(self):
         sn = api.Session(auth.username, auth.key)
         status = api.get_status(sn)
-        tdata = {"shape": (10, 1), "args": ["status"],
+        tdata = {"shape": (14, 1), "args": ["status"],
                  "spotcheck": ("max_season", "value", 2018)}
         CheckResults.frame(status, tdata)
 
+    # This test only passes if it is the first test run. The Blue
+    # Alliance will accept incorrect authorization keys if the
+    # user has recently logged in with a valid key.
     def test_badkey(self):
         sn = api.Session(auth.username, "bad_key")
         with pytest.warns(UserWarning):
@@ -220,7 +223,7 @@ class TestMatches(object):
                  "args": ["event", "2017tur", "matches", "simple"],
                  "spotcheck": (2, "score", 503)}
         CheckResults.frame(matches, tdata)
-        CheckResults.timestampe(matches.time[0], 2017, 4, 22, 12, 0, 0, 68400)
+        CheckResults.timestamp(matches.time[0], 2017, 4, 22, 12, 0, 0, 68400)
         assert matches.attr["timezone"] == "America/Chicago"
 
     def test_event_keys(self):
@@ -249,104 +252,24 @@ class TestMatches(object):
                  "spotcheck": (641, "score", 259)}
         CheckResults.frame(matches, tdata)
 
-    def test_team_match(self):
+    def test_match(self):
         sn = api.Session(auth.username, auth.key)
         matches = api.get_matches(sn, match="2017wasno_qm79")
-        # tdata = {"shape": (6, 49),
-        #          "args": ["team", "frc1318", "matches", "2017"],
-        #          "spotcheck": (641, "score", 259)}
-        # CheckResults.frame(matches, tdata)
-
-        print(matches["time"])
-
-
-# Old stuff after this line ====================================================
+        tdata = {"shape": (6, 49),
+                 "args": ["match", "2017wasno_qm79"],
+                 "spotcheck": (3, "team_key", "frc3070")}
+        CheckResults.frame(matches, tdata)
+        CheckResults.timestamp(matches.actual_time[5],
+                               2017, 3, 26, 11, 24, 20, 61200)
 
 
-class TestSeason(object):
-
-    def test_2017(self):
-        sn = api.Session(auth.username, auth.key, season='2017')
-        season = api.get_season(sn)
-        tdata = {"frame_type": "season", "shape": (2, 8),
-                 "spotcheck": ("teamCount", 0, 3372)}
-        CheckResults.frame(season, tdata)
-
-    def test_2016(self):
-        sn = api.Session(auth.username, auth.key, season='2016')
-        season = api.get_season(sn)
-        tdata = {"frame_type": "season", "shape": (1, 8),
-                 "spotcheck": ("teamCount", 0, 3140)}
-        CheckResults.frame(season, tdata)
-
-    def test_xml(self):
-        sn = api.Session(auth.username, auth.key, season='2017')
-        sn.data_format = "xml"
-        season = api.get_season(sn)
-        tdata = {"frame_type": "season"}
-        CheckResults.dict(season, tdata)
-
-    def test_local(self):
-        sn = api.Session(auth.username, auth.key, season='2017')
-        sn.source = "local"
-        season = api.get_season(sn)
-        tdata = {"frame_type": "season", "shape": (2, 8),
-                 "spotcheck": ("teamCount", 0, 3372)}
-        CheckResults.frame(season, tdata)
-
-
-class TestSchedule(object):
-
-    def test_df(self):
-        sn = api.Session(auth.username, auth.key, season='2017')
-        schedule = api.get_schedule(sn, event="TURING", team=1318)
-        tdata = {"frame_type": "schedule", "shape": (60, 8),
-                 "spotcheck": ("teamNumber", 3, 1318)}
-        CheckResults.frame(schedule, tdata)
-
-
-class TestHybrid(object):
-
-    def test_hybrid(self):
-        sn = api.Session(auth.username, auth.key, season='2017')
-        hybrid = api.get_hybrid(sn, event="TURING")
-        tdata = {"frame_type": "hybrid", "shape": (672, 16),
-                 "spotcheck": ("scoreBlueFinal", 670, 255)}
-        CheckResults.frame(hybrid, tdata)
-
-        lm = "Fri, 21 Apr 2017 13:43:00 GMT"
-        hyb2 = api.get_hybrid(sn, event="TURING", only_mod_since=lm)
-        tdata = {"frame_type": "hybrid", "shape": (348, 16),
-                 "spotcheck": ("matchNumber", 0, 55)}
-        CheckResults.frame(hyb2, tdata, lm)
-
-
-
-class TestScores(object):
-
-    def test_scores(self):
-        sn = api.Session(auth.username, auth.key, season='2017')
-        scores = api.get_scores(sn, event="TURING", level="playoff")
-        tdata = {"frame_type": "scores", "shape": (32, 36),
-                 "spotcheck": ("autoPoints", 21, 89)}
-        CheckResults.frame(scores, tdata)
-
-
-class TestAlliances(object):
-
-    def test_alliances(self):
-        sn = api.Session(auth.username, auth.key, season='2017')
-        alliances = api.get_alliances(sn, event="TURING")
-        tdata = {"frame_type": "alliances", "shape": (8, 9),
-                 "spotcheck": ("captain", 2, 1318)}
-        CheckResults.frame(alliances, tdata)
-
-
-class TestRankings(object):
+class TestDistrictRankings(object):
 
     def test_rankings(self):
-        sn = api.Session(auth.username, auth.key, season='2017')
-        rankings = api.get_rankings(sn, event="TURING")
-        tdata = {"frame_type": "rankings", "shape": (67, 14),
-                 "spotcheck": ("teamNumber", 2, 1318)}
+        sn = api.Session(auth.username, auth.key)
+        rankings = api.get_district_rankings(sn, "2017pnw")
+        tdata = {"shape": (376, 11),
+                 "args": ["district", "2017pnw", "rankings"],
+                 "spotcheck": (0, "team_key", "frc3238")}
+        CheckResults.frame(rankings, tdata)
 

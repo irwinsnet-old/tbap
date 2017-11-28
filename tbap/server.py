@@ -323,7 +323,8 @@ def build_frame(response):
     else:
         dframe = pandas.read_json(jtxt, orient="records")
 
-    return attach_attributes(dframe, response)
+    # return attach_attributes(dframe, response)
+    return dframe
 
 
 def attach_attributes(dframe, response, additional=None):
