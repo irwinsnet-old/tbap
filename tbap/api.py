@@ -420,7 +420,7 @@ def get_district_rankings(session, district, mod_since=None):
 
 
 def get_awards(session, event=None, team=None, year=None, mod_since=None):
-    """
+    """Retrieves awards presented at a specific event or to a team.
 
     Args:
         session (tbap.api.Session):
@@ -445,9 +445,11 @@ def get_awards(session, event=None, team=None, year=None, mod_since=None):
         http_args = ["team", team, "awards"]
     elif team is not None and event is not None and year is None:
         http_args = ["team", team, "event", event, "awards"]
+    elif event is not None and team is None and year is None:
+        http_args = ["event", event, "awards"]
     else:
         raise server.ArgumentError("Incorrect Arguments")
-    return send_request(session, http_args, mod_since)
+    return send_request(session, http_args, "table", mod_since)
 
 
 def get_alliances(session, event, mod_since=None):

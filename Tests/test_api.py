@@ -195,7 +195,8 @@ class TestEvents(object):
     def test_team_simple(self):
         sn = api.Session(auth.username, auth.key)
         events = api.get_events(sn, team="frc1318", year="2017")
-        tdata = {"shape": (8, 30), "args": ["team", "frc1318", "events", "2017"],
+        tdata = {"shape": (8, 30), "args": ["team", "frc1318", "events",
+                                            "2017"],
                  "spotcheck": (0, "short_name", "Einstein (Houston)")}
         CheckResults.frame(events, tdata)
 
@@ -273,3 +274,37 @@ class TestDistrictRankings(object):
                  "spotcheck": (0, "team_key", "frc3238")}
         CheckResults.frame(rankings, tdata)
 
+
+class TestAwards(object):
+
+    def test_team_year(self):
+        sn = api.Session(auth.username, auth.key)
+        awards = api.get_awards(sn, team="frc1318", year=2017)
+        tdata = {"shape": (9, 6),
+                 "args": ["team", "frc1318", "awards", 2017],
+                 "spotcheck": (8, "name", "District Chairman's Award")}
+        CheckResults.frame(awards, tdata)
+
+    def test_team(self):
+        sn = api.Session(auth.username, auth.key)
+        awards = api.get_awards(sn, team="frc1318")
+        tdata = {"shape": (57, 6),
+                 "args": ["team", "frc1318", "awards"],
+                 "spotcheck": (15, "event_key", "2014waahs")}
+        CheckResults.frame(awards, tdata)
+
+    def test_team_event(self):
+        sn = api.Session(auth.username, auth.key)
+        awards = api.get_awards(sn, team="frc1318", event="2017pncmp")
+        tdata = {"shape": (3, 6),
+                 "args": ["team", "frc1318", "event", "2017pncmp", "awards"],
+                 "spotcheck": (0, "team_key", "frc3238")}
+        CheckResults.frame(awards, tdata)
+
+    def test_event(self):
+        sn = api.Session(auth.username, auth.key)
+        awards = api.get_awards(sn, event="2017tur")
+        tdata = {"shape": (15, 6),
+                 "args": ["event", "2017tur", "awards"],
+                 "spotcheck": (3, "team_key", "frc2907")}
+        CheckResults.frame(awards, tdata)
