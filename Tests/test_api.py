@@ -19,8 +19,11 @@ class CheckResults(object):
         assert isinstance(frame, pandas.DataFrame)
         assert frame.attr["args"] == test_data["args"]
         assert frame.shape == test_data["shape"]
-        idx, col, value = test_data["spotcheck"]
-        assert frame.loc[idx, col] == value
+        if "index_name" in test_data:
+            assert frame.index.name == test_data["index_name"]
+        if "spotcheck" in test_data:
+            idx, col, value = test_data["spotcheck"]
+            assert frame.loc[idx, col] == value
         assert server.httpdate_to_datetime(frame.attr["Last-Modified"])
         json.loads(frame.attr["text"])  # Verify that "text" is valid JSON text.
 
@@ -92,8 +95,9 @@ class TestDistricts(object):
     def test_districts(self):
         sn = api.Session(auth.username, auth.key)
         dist = api.get_districts(sn, 2017)
-        tdata = {"shape": (10, 4), "args": ["districts", 2017],
-                 "spotcheck": (9, "key", "2017pnw")}
+        tdata = {"shape": (10, 3), "args": ["districts", 2017],
+                 "index_name": "key",
+                 "spotcheck": ("2017pnw", "display_name", "Pacific Northwest")}
         CheckResults.frame(dist, tdata)
 
         lm = dist.attr["Last-Modified"]
@@ -106,8 +110,9 @@ class TestTeams(object):
     def test_full(self):
         sn = api.Session(auth.username, auth.key)
         teams = api.get_teams(sn, page=1)
-        tdata = {"shape": (378, 19), "args": ["teams", 1],
-                 "spotcheck": (1, "nickname", "The PowerKnights")}
+        tdata = {"shape": (378, 18), "args": ["teams", 1],
+                 "index_name": "key",
+                 "spotcheck": ("frc501", "nickname", "The PowerKnights")}
         CheckResults.frame(teams, tdata)
 
         lm = teams.attr["Last-Modified"]
@@ -117,8 +122,9 @@ class TestTeams(object):
     def test_simple(self):
         sn = api.Session(auth.username, auth.key)
         teams = api.get_teams(sn, page=1, response="simple")
-        tdata = {"shape": (378, 7), "args": ["teams", 1, "simple"],
-                 "spotcheck": (3, "state_prov", "Michigan")}
+        tdata = {"shape": (378, 6), "args": ["teams", 1, "simple"],
+                 "index_name": "key",
+                 "spotcheck": ("frc503", "state_prov", "Michigan")}
         CheckResults.frame(teams, tdata)
 
     def test_keys(self):
@@ -134,15 +140,17 @@ class TestTeam(object):
     def test_full(self):
         sn = api.Session(auth.username, auth.key)
         team = api.get_team(sn, "frc1318")
-        tdata = {"shape": (1, 19), "args": ["team", "frc1318"],
-                 "spotcheck": (0, "motto", "Robots Don't Quit!")}
+        tdata = {"shape": (1, 18), "args": ["team", "frc1318"],
+                 "index_name": "key",
+                 "spotcheck": ("frc1318", "motto", "Robots Don't Quit!")}
         CheckResults.frame(team, tdata)
 
     def test_simple(self):
         sn = api.Session(auth.username, auth.key)
         team = api.get_team(sn, "frc1318", response="simple")
-        tdata = {"shape": (1, 7), "args": ["team", "frc1318", "simple"],
-                 "spotcheck": (0, "team_number", 1318)}
+        tdata = {"shape": (1, 6), "args": ["team", "frc1318", "simple"],
+                 "index_name": "key",
+                 "spotcheck": ("frc1318", "team_number", 1318)}
         CheckResults.frame(team, tdata)
 
     def test_years(self):
@@ -156,8 +164,9 @@ class TestTeam(object):
     def test_robots(self):
         sn = api.Session(auth.username, auth.key)
         team = api.get_team(sn, "frc1318", response="robots")
-        tdata = {"shape": (4, 4), "args": ["team", "frc1318", "robots"],
-                 "spotcheck": (2, "robot_name", "Cerberus")}
+        tdata = {"shape": (4, 3), "args": ["team", "frc1318", "robots"],
+                 "index_name": "key",
+                 "spotcheck": ("frc1318_2017", "robot_name", "Cerberus")}
         CheckResults.frame(team, tdata)
 
 
@@ -166,15 +175,16 @@ class TestEvents(object):
     def test_year_full(self):
         sn = api.Session(auth.username, auth.key)
         events = api.get_events(sn, year=2016)
-        tdata = {"shape": (203, 30), "args": ["events", 2016],
-                 "spotcheck": (189, "city", "Auburn")}
+        tdata = {"shape": (203, 32), "args": ["events", 2016],
+                 "index_name": "key",
+                 "spotcheck": ("2016waamv", "city", "Auburn")}
         CheckResults.frame(events, tdata)
 
     def test_year_simple(self):
         sn = api.Session(auth.username, auth.key)
         events = api.get_events(sn, year=2016, response="simple")
-        tdata = {"shape": (203, 11), "args": ["events", 2016, "simple"],
-                 "spotcheck": (196, "event_code", "wasno")}
+        tdata = {"shape": (203, 13), "args": ["events", 2016, "simple"],
+                 "spotcheck": ("2016wasno", "city", "Snohomish")}
         CheckResults.frame(events, tdata)
 
     def test_year_keys(self):
@@ -187,24 +197,24 @@ class TestEvents(object):
     def test_district_full(self):
         sn = api.Session(auth.username, auth.key)
         events = api.get_events(sn, district="2017pnw")
-        tdata = {"shape": (10, 33), "args": ["district", "2017pnw", "events"],
-                 "spotcheck": (6, "short_name",
-                               "Central Washington University")}
+        tdata = {"shape": (10, 32), "args": ["district", "2017pnw", "events"],
+                 "spotcheck": ("2017waamv", "postal_code", "98092")}
         CheckResults.frame(events, tdata)
 
     def test_team_simple(self):
         sn = api.Session(auth.username, auth.key)
         events = api.get_events(sn, team="frc1318", year="2017")
-        tdata = {"shape": (8, 30), "args": ["team", "frc1318", "events",
+        tdata = {"shape": (8, 32), "args": ["team", "frc1318", "events",
                                             "2017"],
-                 "spotcheck": (0, "short_name", "Einstein (Houston)")}
+                 "spotcheck": ("2017cmptx", "event_type_string",
+                               "Championship Finals")}
         CheckResults.frame(events, tdata)
 
     def test_event_simple(self):
         sn = api.Session(auth.username, auth.key)
-        events = api.get_events(sn, event="2017tur")
-        tdata = {"shape": (1, 30), "args": ["event", "2017tur"],
-                 "spotcheck": (0, "postal_code", 77010)}
+        events = api.get_events(sn, event="2017tur", response="simple")
+        tdata = {"shape": (1, 10), "args": ["event", "2017tur", "simple"],
+                 "spotcheck": ("2017tur", "name", "Turing Division")}
         CheckResults.frame(events, tdata)
 
 
@@ -308,3 +318,22 @@ class TestAwards(object):
                  "args": ["event", "2017tur", "awards"],
                  "spotcheck": (3, "team_key", "frc2907")}
         CheckResults.frame(awards, tdata)
+
+
+class TestAlliances(object):
+
+    def test_event(self):
+        sn = api.Session(auth.username, auth.key)
+        alliances = api.get_alliances(sn, event="2017pncmp")
+        tdata = {"shape": (25, 11),
+                 "args": ["event", "2017pncmp", "alliances"]}
+        CheckResults.frame(alliances, tdata)
+        assert alliances.loc["Alliance 8", "frc2907"]["current_level_wins"] == 1
+
+
+class TestTS(object):
+
+    def test_expand_col(self):
+        sn = api.Session(auth.username, auth.key)
+        events = api.get_events(sn, year=2016)
+        print(events)

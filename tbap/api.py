@@ -82,6 +82,7 @@ import pandas.io.json
 import pandas
 import pytz
 
+import tbap.dframe
 import tbap.server as server
 import tbap.dframe as dframe
 
@@ -123,7 +124,7 @@ def get_districts(session, year=None, team=None, mod_since=None):
         http_args = ["districts", year]
     else:
         raise server.ArgumentError("Incorrect Arguments")
-    return send_request(session, http_args, "table", mod_since)
+    return send_request(session, http_args, "table", "key", mod_since)
 
 
 def get_teams(session,  # pylint: disable=too-many-arguments
@@ -186,7 +187,7 @@ def get_teams(session,  # pylint: disable=too-many-arguments
         raise server.ArgumentError("Incorrect Arguments")
     if response.lower() in ["simple", "keys"]:
         http_args.append(response.lower())
-    results = send_request(session, http_args, "table", mod_since)
+    results = send_request(session, http_args, "table", "key", mod_since)
     if response == "keys":
         results.columns = ["team"]
     return results
@@ -214,7 +215,7 @@ def get_team(session, team, response="full", mod_since=None):
     http_args = ["team", team]
     if response.lower() in ["simple", "years_participated", "robots"]:
         http_args.append(response.lower())
-    results = send_request(session, http_args, "table", mod_since)
+    results = send_request(session, http_args, "table", "key", mod_since)
     if response == "years_participated":
         results.columns = ["year"]
     return results
@@ -275,10 +276,10 @@ def get_events(session,  # pylint: disable=too-many-arguments
         raise server.ArgumentError("Incorrect Arguments")
     if response.lower() in ["simple", "keys"]:
         http_args.append(response.lower())
-    results = send_request(session, http_args, "table", mod_since)
+    results = send_request(session, http_args, "table", "key", mod_since)
     if response == "keys":
         results.columns = ["key"]
-    return results
+    return dframe.expand_column(results, "district")
 
 
 def get_matches(session, event=None, team=None, year=None, match=None,
@@ -342,7 +343,7 @@ def get_matches(session, event=None, team=None, year=None, match=None,
         return http_data
 
     if response.lower() == "keys":
-        df = server.build_frame(http_data)
+        df = tbap.dframe.build_table(http_data)
         df.columns = ["key"]
         return server.attach_attributes(df, http_data)
 
@@ -453,6 +454,22 @@ def get_awards(session, event=None, team=None, year=None, mod_since=None):
 
 
 def get_alliances(session, event, mod_since=None):
+    """Retrieves data for each playoff alliance.
+
+    Args:
+        session (tbap.api.Session):
+            An instance of tbap.api.Session that contains
+            a valid username and authorization key.
+        event (str):
+            A key value specifying the competition year and event.
+        mod_since:
+
+        mod_since (str):
+            A string containing an HTTP formatted date and time.
+            Optional.
+    Returns:
+        A pandas.Dataframe object or a Python dictionary object.
+    """
     http_args = ["event", event, "alliances"]
 
     data = server.send_http_request(session, http_args, mod_since)
@@ -498,16 +515,27 @@ def get_alliances(session, event, mod_since=None):
             alli_dct["overall_" + stat].append(
                     alliance["status"]["record"][stat])
 
-    for alliance in jdata:
-        for team in alliance["picks"]:
-            append_rank_data(alliance, team)
-        if alliance["backup"] is not None:
-            append_rank_data(alliance, alliance["backup"]["in"])
+    for curr_alliance in jdata:
+        for curr_team in curr_alliance["picks"]:
+            append_rank_data(curr_alliance, curr_team)
+        if curr_alliance["backup"] is not None:
+            append_rank_data(curr_alliance, curr_alliance["backup"]["in"])
 
-    return pandas.DataFrame(alli_dct).set_index(["name", "team"])
+    df = pandas.DataFrame(alli_dct).set_index(["name", "team"])
+    return server.attach_attributes(df, data)
 
 
 def get_insights(session, event, mod_since=None):
+    """
+
+    Args:
+        session:
+        event:
+        mod_since:
+
+    Returns:
+
+    """
     http_args = ["event", event, "insights"]
 
     data = server.send_http_request(session, http_args, mod_since)
@@ -717,7 +745,7 @@ def get_social_media(session, team, mod_since=None):
     return pandas.io.json.json_normalize(jdata)
 
 
-def send_request(session, http_args, normalize, mod_since=None):
+def send_request(session, http_args, normalize, index=None, mod_since=None):
     """Routes data request to correct internal functions.
 
     Args:
@@ -741,15 +769,20 @@ def send_request(session, http_args, normalize, mod_since=None):
         "dataframe") or a Python dictionary.
 
     """
-    response = server.send_http_request(session, http_args, mod_since)
-    if session.data_format != "dataframe" or response["code"] == 304:
-        return response
+    http_response = server.send_http_request(session, http_args, mod_since)
+    if session.data_format != "dataframe" or http_response["code"] == 304:
+        return http_response
     else:
         if normalize == "table":
-            frame = server.build_frame(response)
+            frame = tbap.dframe.build_table(http_response)
         elif normalize == "single_column":
-            frame = dframe.build_single_column_frame(response["text"])
-    return server.attach_attributes(frame, response)
+            frame = dframe.build_single_column(http_response["text"])
+    if index is not None:
+        try:
+            frame.set_index(index, inplace=True)
+        except KeyError:
+            pass  # Skip setting the index if index columns not in dataframe.
+    return server.attach_attributes(frame, http_response)
 
 
 # noinspection PyAttributeOutsideInit

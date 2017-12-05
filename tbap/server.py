@@ -21,8 +21,7 @@ import warnings
 
 import pandas
 from pandas.io import json as pj
-import dateutil.tz
-import pytz
+
 
 #todo(stacy.irwin): accept integer arguments for team numbers, start, end, etc.
 #todo(stacy.irwin): Rewrite build_url so it doesn't know about season or status.
@@ -135,7 +134,9 @@ def send_http_request(session, args, mod_since=None):
     try:
         with urllib.request.urlopen(req) as resp:
             data["code"] = resp.getcode()
-            data["text"] = resp.read().decode("utf-8")
+            # Using json.dumps(json.loads()) to remove carriage returns from
+            #   json text provided by Blue Allianc.
+            data["text"] = json.dumps(json.loads(resp.read().decode("utf-8")))
             data["url"] = resp.geturl()
             for key, value in resp.info().items():
                 data[key] = value
@@ -287,44 +288,6 @@ class ArgumentError(Exception):
 
 class JsonParseError(Exception):
     pass
-
-
-def build_frame(response):
-    jtxt = response["text"]
-    jdata = json.loads(jtxt)
-    scaler_cols = []
-    dict_cols = []
-    list_cols = []
-
-    # Pandas functions throw error if json is single dict object.
-    if isinstance(jdata, dict):
-        jdata = [jdata]
-        jtxt = "[" + jtxt + "]"
-
-    if isinstance(jdata[0], dict):
-        for key, var in jdata[0].items():
-            if isinstance(var, dict):
-                dict_cols.append(key)
-            elif isinstance(var, list):
-                list_cols.append(key)
-            else:
-                scaler_cols.append(key)
-
-    if len(list_cols) == 1:
-        dframe = pj.json_normalize(jdata, record_path=list_cols,
-                                   meta=scaler_cols)
-    elif len(dict_cols) > 0:
-        dframe = pj.json_normalize(jdata)
-        for val in dict_cols:
-            if val in dframe.columns:
-                dframe.drop(val, axis=1, inplace=True)
-    elif not scaler_cols and not list_cols:
-        dframe = pandas.read_json(jtxt)
-    else:
-        dframe = pandas.read_json(jtxt, orient="records")
-
-    # return attach_attributes(dframe, response)
-    return dframe
 
 
 def attach_attributes(dframe, response, additional=None):
