@@ -222,19 +222,21 @@ class TestMatches(object):
 
     def test_event_full(self):
         sn = api.Session(auth.username, auth.key)
+        sn.time_zone = "America/Chicago"
         matches = api.get_matches(sn, "2017tur")
-        tdata = {"shape": (770, 49), "args": ["event", "2017tur", "matches"],
-                 "spotcheck": (765, "team_key", "frc1318")}
+        tdata = {"shape": (770, 47), "args": ["event", "2017tur", "matches"]}
         CheckResults.frame(matches, tdata)
+        assert matches.loc["2017tur_f1m2"].at["frc1318", "score"] == 461
 
     def test_event_simple(self):
         sn = api.Session(auth.username, auth.key, time_zone="America/Chicago")
         matches = api.get_matches(sn, "2017tur", response="simple")
-        tdata = {"shape": (770, 14),
-                 "args": ["event", "2017tur", "matches", "simple"],
-                 "spotcheck": (2, "score", 503)}
+        tdata = {"shape": (770, 12),
+                 "args": ["event", "2017tur", "matches", "simple"]}
         CheckResults.frame(matches, tdata)
-        CheckResults.timestamp(matches.time[0], 2017, 4, 22, 12, 0, 0, 68400)
+        CheckResults.timestamp(matches.loc["2017tur_f1m2"].at["frc2046",
+                                                              "time"],
+                               2017, 4, 22, 12, 13, 0, 68400)
         assert matches.attr["timezone"] == "America/Chicago"
 
     def test_event_keys(self):
@@ -249,28 +251,29 @@ class TestMatches(object):
         sn = api.Session(auth.username, auth.key)
         matches = api.get_matches(sn, "2017tur", team="frc1318",
                                   response="simple")
-        tdata = {"shape": (102, 14),
+        tdata = {"shape": (102, 12),
                  "args": ["team", "frc1318", "event", "2017tur", "matches",
-                          "simple"],
-                 "spotcheck": (55, "team_key", "frc2046")}
+                          "simple"]}
+        assert matches.loc["2017tur_qm52"].at["frc1318", "score"] == 253
         CheckResults.frame(matches, tdata)
 
     def test_team_year_full(self):
         sn = api.Session(auth.username, auth.key)
         matches = api.get_matches(sn, team="frc1318", year="2017")
-        tdata = {"shape": (642, 49),
-                 "args": ["team", "frc1318", "matches", "2017"],
-                 "spotcheck": (641, "score", 259)}
+        tdata = {"shape": (642, 47),
+                 "args": ["team", "frc1318", "matches", "2017"]}
+        assert matches.loc["2017tur_f1m1"].at["frc2046",
+                                              "teleopFuelPoints"] == 21
         CheckResults.frame(matches, tdata)
 
     def test_match(self):
         sn = api.Session(auth.username, auth.key)
         matches = api.get_matches(sn, match="2017wasno_qm79")
-        tdata = {"shape": (6, 49),
-                 "args": ["match", "2017wasno_qm79"],
-                 "spotcheck": (3, "team_key", "frc3070")}
+        tdata = {"shape": (6, 47),
+                 "args": ["match", "2017wasno_qm79"]}
         CheckResults.frame(matches, tdata)
-        CheckResults.timestamp(matches.actual_time[5],
+        act_time = matches.loc["2017wasno_qm79"].at["frc4077", "actual_time"]
+        CheckResults.timestamp(act_time,
                                2017, 3, 26, 11, 24, 20, 61200)
 
 
@@ -329,6 +332,60 @@ class TestAlliances(object):
                  "args": ["event", "2017pncmp", "alliances"]}
         CheckResults.frame(alliances, tdata)
         assert alliances.loc["Alliance 8", "frc2907"]["current_level_wins"] == 1
+
+
+class TestEventData(object):
+
+    def test_get_insights(self):
+        sn = api.Session(auth.username, auth.key)
+        insights = api.get_insights(sn, event="2017pncmp")
+        tdata = {"shape": (64, 3), "args": ["event", "2017pncmp", "insights"]}
+        CheckResults.frame(insights, tdata)
+        assert (insights.loc["qual", "average_fuel_points"].
+                at["value_0"] == pytest.approx(7.652344))
+
+    def test_get_oprs(self):
+        sn = api.Session(auth.username, auth.key)
+        oprs = api.get_oprs(sn, event="2017pncmp")
+        tdata = {"shape": (64, 3), "args": ["event", "2017pncmp", "oprs"]}
+        CheckResults.frame(oprs, tdata)
+        assert oprs.loc["frc1595"].at["oprs"] == pytest.approx(100.205323)
+
+    def test_get_predictions(self):
+        sn = api.Session(auth.username, auth.key)
+        pred = api.get_predictions(sn, event="2017pncmp")
+        # Check event_stats
+        tdata = {"shape": (14, 1),
+                 "args": ["event", "2017pncmp", "predictions"]}
+        CheckResults.frame(pred["event_stats"], tdata)
+        assert (pred["event_stats"].loc["playoff", "brier_scores_gears"].
+                at["value"] == pytest.approx(0.075659, rel=1e-5))
+
+        # Check predictions
+        tdata = {"shape": (2628, 1),
+                 "args": ["event", "2017pncmp", "predictions"]}
+        CheckResults.frame(pred["predictions"], tdata)
+        assert (pred["predictions"].
+                loc["qual", "2017pncmp_qm1", "blue", "gears"].
+                at["value"] == pytest.approx(5.12684, rel=1e-5))
+
+        # Check team rankings
+        tdata = {"shape": (64, 2),
+                 "args": ["event", "2017pncmp", "predictions"]}
+        CheckResults.frame(pred["team_rankings"], tdata)
+        assert (pred["team_rankings"].
+                loc["frc2046"].
+                at["points"] == pytest.approx(24, rel=1e-2))
+
+        # Check team stats
+        tdata = {"shape": (768, 1),
+                 "args": ["event", "2017pncmp", "predictions"]}
+        CheckResults.frame(pred["team_stats"], tdata)
+        assert (pred["team_stats"].
+                loc["frc2907", "score", "mean", "playoff"].
+                at["value"] == pytest.approx(108.635760, rel=1e-5))
+
+
 
 
 class TestTS(object):

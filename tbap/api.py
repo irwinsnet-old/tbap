@@ -72,12 +72,9 @@ Tbap Function Return Values
 
 """
 import collections
-import datetime
 import json
 import re
-import warnings
 
-import numpy
 import pandas.io.json
 import pandas
 import pytz
@@ -389,6 +386,8 @@ def get_matches(session, event=None, team=None, year=None, match=None,
         ts = pandas.to_datetime(df[col], unit="s")
         df[col] = ts.dt.tz_localize("UTC").dt.tz_convert(session.time_zone)
 
+    df.set_index(["key", "team_key"], inplace=True)
+
     return server.attach_attributes(df, http_data,
                                     {"timezone": str(session.time_zone)})
 
@@ -412,7 +411,7 @@ def get_district_rankings(session, district, mod_since=None):
         A pandas.Dataframe object or a Python dictionary object.
     """
     http_args = ["district", district, "rankings"]
-    df = send_request(session, http_args, "table", mod_since)
+    df = send_request(session, http_args, "table", mod_since=mod_since)
     results = df.loc[:, ["rank", "team_key", "point_total", "rookie_bonus",
                          "event_key", "district_cmp", "total", "qual_points",
                          "alliance_points", "elim_points", "award_points"]]
@@ -450,7 +449,7 @@ def get_awards(session, event=None, team=None, year=None, mod_since=None):
         http_args = ["event", event, "awards"]
     else:
         raise server.ArgumentError("Incorrect Arguments")
-    return send_request(session, http_args, "table", mod_since)
+    return send_request(session, http_args, "table", mod_since=mod_since)
 
 
 def get_alliances(session, event, mod_since=None):
@@ -462,8 +461,6 @@ def get_alliances(session, event, mod_since=None):
             a valid username and authorization key.
         event (str):
             A key value specifying the competition year and event.
-        mod_since:
-
         mod_since (str):
             A string containing an HTTP formatted date and time.
             Optional.
@@ -529,11 +526,17 @@ def get_insights(session, event, mod_since=None):
     """
 
     Args:
-        session:
-        event:
-        mod_since:
+        session (tbap.api.Session):
+            An instance of tbap.api.Session that contains
+            a valid username and authorization key.
+        event (str):
+            A key value specifying the competition year and event.
+        mod_since (str):
+            A string containing an HTTP formatted date and time.
+            Optional.
 
     Returns:
+        A pandas.Dataframe object or a Python dictionary object.
 
     """
     http_args = ["event", event, "insights"]
@@ -543,7 +546,6 @@ def get_insights(session, event, mod_since=None):
         return data
 
     jdata = json.loads(data["text"])
-
     rows = []
     for lvl in jdata.keys():
         for key, val in jdata[lvl].items():
@@ -555,10 +557,27 @@ def get_insights(session, event, mod_since=None):
             else:
                 rows.append({"level": lvl, "statistic": key, "value_0": val})
 
-    return pandas.DataFrame(rows).set_index(["level", "statistic"])
+    dframe = pandas.DataFrame(rows).set_index(["level", "statistic"])
+    return server.attach_attributes(dframe, data)
 
 
 def get_oprs(session, event, mod_since=None):
+    """Retrieves OPR, DPR, and CCWM for each team at an event.
+
+    Args:
+        session (tbap.api.Session):
+            An instance of tbap.api.Session that contains
+            a valid username and authorization key.
+        event (str):
+            A key value specifying the competition year and event.
+        mod_since (str):
+            A string containing an HTTP formatted date and time.
+            Optional.
+
+    Returns:
+        A pandas.Dataframe object or a Python dictionary object.
+
+    """
     http_args = ["event", event, "oprs"]
     data = server.send_http_request(session, http_args, mod_since)
     if session.data_format != "dataframe":
@@ -571,11 +590,29 @@ def get_oprs(session, event, mod_since=None):
         cols["team"].append(team)
         for col in jdata.keys():
             cols[col].append(jdata[col][team])
-
-    return pandas.DataFrame(cols)
+    dframe = pandas.DataFrame(cols).set_index("team")
+    return server.attach_attributes(dframe, data)
 
 
 def get_predictions(session, event, mod_since=None):
+    """
+
+    Args:
+        session (tbap.api.Session):
+            An instance of tbap.api.Session that contains
+            a valid username and authorization key.
+        event (str):
+            A key value specifying the competition year and event.
+        mod_since (str):
+            A string containing an HTTP formatted date and time.
+            Optional.
+
+    Returns:
+        A dictionary of pandas.Dataframe objects or a Python dictionary
+        object. The keys ofthe dictionary are *event_stats*,
+        *team_stats*, *predictions*, and *team_rankings*.
+
+    """
     http_args = ["event", event, "predictions"]
     data = server.send_http_request(session, http_args, mod_since)
     if session.data_format != "dataframe":
@@ -639,8 +676,10 @@ def get_predictions(session, event, mod_since=None):
     teams_frame = pandas.DataFrame(rows).set_index(["team", "statistic",
                                                     "point", "level"])
 
-    return {"event_stats": stats_frame, "predictions": prediction_frame,
-            "team_rankings": rank_frame, "team_stats": teams_frame}
+    results = {"event_stats": stats_frame, "predictions": prediction_frame,
+               "team_rankings": rank_frame, "team_stats": teams_frame}
+    return {key: server.attach_attributes(value, data)
+            for key, value in results.items()}
 
 
 def get_event_team_status(session, event, team, series=False, mod_since=None):
