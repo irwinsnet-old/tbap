@@ -79,7 +79,6 @@ import pandas.io.json
 import pandas
 import pytz
 
-import tbap.dframe
 import tbap.server as server
 import tbap.dframe as dframe
 
@@ -336,11 +335,11 @@ def get_matches(session, event=None, team=None, year=None, match=None,
     if response.lower() in ["simple", "keys"]:
         http_args.append(response.lower())
     http_data = server.send_http_request(session, http_args, mod_since)
-    if session.data_format != "dataframe":
+    if session.data_format != "dataframe" or http_data["code"] != 200:
         return http_data
 
     if response.lower() == "keys":
-        df = tbap.dframe.build_table(http_data)
+        df = dframe.build_table(http_data)
         df.columns = ["key"]
         return server.attach_attributes(df, http_data)
 
@@ -470,7 +469,7 @@ def get_alliances(session, event, mod_since=None):
     http_args = ["event", event, "alliances"]
 
     data = server.send_http_request(session, http_args, mod_since)
-    if session.data_format != "dataframe":
+    if session.data_format != "dataframe" or data["code"] != 200:
         return data
 
     jdata = json.loads(data["text"])
@@ -542,7 +541,7 @@ def get_insights(session, event, mod_since=None):
     http_args = ["event", event, "insights"]
 
     data = server.send_http_request(session, http_args, mod_since)
-    if session.data_format != "dataframe":
+    if session.data_format != "dataframe" or data["code"] != 200:
         return data
 
     jdata = json.loads(data["text"])
@@ -580,7 +579,7 @@ def get_oprs(session, event, mod_since=None):
     """
     http_args = ["event", event, "oprs"]
     data = server.send_http_request(session, http_args, mod_since)
-    if session.data_format != "dataframe":
+    if session.data_format != "dataframe" or data["code"] != 200:
         return data
 
     jdata = json.loads(data["text"])
@@ -615,7 +614,7 @@ def get_predictions(session, event, mod_since=None):
     """
     http_args = ["event", event, "predictions"]
     data = server.send_http_request(session, http_args, mod_since)
-    if session.data_format != "dataframe":
+    if session.data_format != "dataframe" or data["code"] != 200:
         return data
 
     jdata = json.loads(data["text"])
@@ -683,28 +682,62 @@ def get_predictions(session, event, mod_since=None):
 
 
 def get_event_team_status(session, event, team, series=False, mod_since=None):
+    """Retrieves team rankings for a specific event.
+
+    Args:
+        session (tbap.api.Session):
+            An instance of tbap.api.Session that contains
+            a valid username and authorization key.
+        event (str):
+            A key value specifying the competition year and event.
+        team (str):
+            The four digit FRC team number as an integer.
+        series (boolean):
+            If True, returns a pandas series instead of a dataframe.
+            Optional. Default is False.
+        mod_since (str):
+            A string containing an HTTP formatted date and time.
+            Optional.
+
+    Returns:
+        A pandas.Dataframe object or a Python dictionary object.
+    """
     http_args = ["team", team, "event", event, "status"]
     data = server.send_http_request(session, http_args, mod_since)
-    if session.data_format != "dataframe":
+    if session.data_format != "dataframe" or data["code"] != 200:
         return data
     jdata = json.loads(data["text"])
     if team is not None:
-        sort_order = list(map(lambda x: x["name"],
+        sort_order = list(map(lambda x: re.sub(" ", "_", x["name"]),
                               jdata["qual"]["sort_order_info"]))
         sort_data = jdata["qual"]["ranking"]["sort_orders"]
         for idx, field in enumerate(sort_order):
             jdata["qual"]["ranking"][field] = sort_data[idx]
         del(jdata["qual"]["sort_order_info"])
         del(jdata["qual"]["ranking"]["sort_orders"])
-        df = server.build_single_column_frame(jdata, series)
-        return df
-# TODO(stacy.irwin) Replace spaces in key names with underscores
+        df = dframe.build_single_column(jdata, series)
+        return server.attach_attributes(df, data)
 
 
 def get_event_rankings(session, event, mod_since=None):
+    """Retrieves team rankings for a specific event.
+
+    Args:
+        session (tbap.api.Session):
+            An instance of tbap.api.Session that contains
+            a valid username and authorization key.
+        event (str):
+            A key value specifying the competition year and event.
+        mod_since (str):
+            A string containing an HTTP formatted date and time.
+            Optional.
+
+    Returns:
+        A pandas.Dataframe object or a Python dictionary object.
+    """
     http_args = ["event", event, "rankings"]
     data = server.send_http_request(session, http_args, mod_since)
-    if session.data_format != "dataframe":
+    if session.data_format != "dataframe" or data["code"] != 200:
         return data
 
     jdata = json.loads(data["text"])
@@ -732,13 +765,13 @@ def get_event_rankings(session, event, mod_since=None):
     # Put columns in a logical order
     sorted_cols = ["team", "matches_played"] + extra_stats + sort_order + rec_stat
     other_cols = [col for col in df.columns if col not in sorted_cols ]
-    return df[sorted_cols + other_cols]
+    return server.attach_attributes(df[sorted_cols + other_cols], data)
 
 
 def get_district_points(session, event, mod_since=None):
     http_args = ["event", event, "district_points"]
     data = server.send_http_request(session, http_args, mod_since)
-    if session.data_format != "dataframe":
+    if session.data_format != "dataframe" or data["code"] != 200:
         return data
 
     jdata = json.loads(data["text"])
@@ -765,7 +798,7 @@ def get_district_points(session, event, mod_since=None):
 def get_media(session, team, year, mod_since=None):
     http_args = ["team", team, "media", str(year)]
     data = server.send_http_request(session, http_args, mod_since)
-    if session.data_format != "dataframe":
+    if session.data_format != "dataframe" or data["code"] != 200:
         return data
 
     jdata = json.loads(data["text"])
@@ -776,7 +809,7 @@ def get_media(session, team, year, mod_since=None):
 def get_social_media(session, team, mod_since=None):
     http_args = ["team", team, "social_media"]
     data = server.send_http_request(session, http_args, mod_since)
-    if session.data_format != "dataframe":
+    if session.data_format != "dataframe" or data["code"] != 200:
         return data
 
     jdata = json.loads(data["text"])
@@ -809,11 +842,11 @@ def send_request(session, http_args, normalize, index=None, mod_since=None):
 
     """
     http_response = server.send_http_request(session, http_args, mod_since)
-    if session.data_format != "dataframe" or http_response["code"] == 304:
+    if session.data_format != "dataframe" or http_response["code"] != 200:
         return http_response
     else:
         if normalize == "table":
-            frame = tbap.dframe.build_table(http_response)
+            frame = dframe.build_table(http_response)
         elif normalize == "single_column":
             frame = dframe.build_single_column(http_response["text"])
     if index is not None:

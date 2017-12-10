@@ -385,12 +385,19 @@ class TestEventData(object):
                 loc["frc2907", "score", "mean", "playoff"].
                 at["value"] == pytest.approx(108.635760, rel=1e-5))
 
-
-
-
-class TestTS(object):
-
-    def test_expand_col(self):
+    def test_team_event_status(self):
         sn = api.Session(auth.username, auth.key)
-        events = api.get_events(sn, year=2016)
-        print(events)
+        ets = api.get_event_team_status(sn, "2017tur", "frc1318")
+        tdata = {"shape": (34, 1),
+                 "args": ["team", "frc1318", "event", "2017tur", "status"],
+                 "spotcheck": ("alliance_status_str", "value",
+                               r"<b>Captain</b> of <b>Alliance 3</b>")}
+        CheckResults.frame(ets, tdata)
+
+    def test_event_rankings(self):
+        sn = api.Session(auth.username, auth.key)
+        rankings = api.get_event_rankings(sn, "2017pncmp")
+        tdata = {"shape": (64, 14),
+                 "args": ["event", "2017pncmp", "rankings"],
+                 "spotcheck": (3, "team", "frc2046")}
+        CheckResults.frame(rankings, tdata)

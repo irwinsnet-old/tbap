@@ -1,4 +1,6 @@
 import json
+import re
+
 import pandas
 from pandas.io import json as pj
 
@@ -8,6 +10,7 @@ def build_single_column(data, series=False):
     rows = []
 
     def append_scaler(key, val):
+        key = re.sub(" ", "_", key)  # Replace spaces with underscores in keys.
         if isinstance(val, dict):
             if not val:
                 rows.append({"label": key, "value": None})
@@ -23,8 +26,8 @@ def build_single_column(data, series=False):
         else:
             rows.append({"label": key, "value": val})
 
-    for jkey, jval in jdata.items():
-        append_scaler(jkey, jval)
+    for top_key, top_val in jdata.items():
+        append_scaler(top_key, top_val)
 
     if series:
         s_list = [(x["label"], x["value"]) for x in rows]
