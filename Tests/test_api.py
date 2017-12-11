@@ -401,3 +401,18 @@ class TestEventData(object):
                  "args": ["event", "2017pncmp", "rankings"],
                  "spotcheck": (3, "team", "frc2046")}
         CheckResults.frame(rankings, tdata)
+
+    def test_get_district_points(self):
+        sn = api.Session(auth.username, auth.key)
+        pts = api.get_district_points(sn, event="2017pncmp")
+        # Check event_stats
+        tdata = {"shape": (68, 5),
+                 "args": ["event", "2017pncmp", "district_points"],
+                 "spotcheck": ("frc1318", "total", 81)}
+        CheckResults.frame(pts["points"], tdata)
+
+        # Check predictions
+        tdata = {"shape": (192, 3),
+                 "args": ["event", "2017pncmp", "district_points"]}
+        CheckResults.frame(pts["high_scores"], tdata)
+        assert pts["high_scores"].loc["frc2046"].iat[0, 0] == 379

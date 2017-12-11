@@ -594,7 +594,7 @@ def get_oprs(session, event, mod_since=None):
 
 
 def get_predictions(session, event, mod_since=None):
-    """
+    """ Retrieves predictions regarding team performance.
 
     Args:
         session (tbap.api.Session):
@@ -610,7 +610,6 @@ def get_predictions(session, event, mod_since=None):
         A dictionary of pandas.Dataframe objects or a Python dictionary
         object. The keys ofthe dictionary are *event_stats*,
         *team_stats*, *predictions*, and *team_rankings*.
-
     """
     http_args = ["event", event, "predictions"]
     data = server.send_http_request(session, http_args, mod_since)
@@ -769,6 +768,23 @@ def get_event_rankings(session, event, mod_since=None):
 
 
 def get_district_points(session, event, mod_since=None):
+    """ Retrieves district points earned at an FRC competition.
+
+    Args:
+        session (tbap.api.Session):
+            An instance of tbap.api.Session that contains
+            a valid username and authorization key.
+        event (str):
+            A key value specifying the competition year and event.
+        mod_since (str):
+            A string containing an HTTP formatted date and time.
+            Optional.
+
+    Returns:
+        A dictionary of pandas.Dataframe objects or a Python dictionary
+        object. The keys ofthe dictionary are *points* and
+        *high_scores*.
+    """
     http_args = ["event", event, "district_points"]
     data = server.send_http_request(session, http_args, mod_since)
     if session.data_format != "dataframe" or data["code"] != 200:
@@ -780,7 +796,7 @@ def get_district_points(session, event, mod_since=None):
     df_points = pandas.read_json(json.dumps(jdata["points"]),
                                  orient="index")
 
-    # Tiebreakers
+    # High Scores
     rows = []
     for team, tdata in jdata["tiebreakers"].items():
         idx = 1
@@ -789,10 +805,11 @@ def get_district_points(session, event, mod_since=None):
             idx += 1
             row["qual_wins"] = tdata["qual_wins"]
             rows.append(row)
-
     df_high_scores = pandas.DataFrame(rows).set_index(["team"])
 
-    return {"points": df_points, "high_scores": df_high_scores}
+    results = {"points": df_points, "high_scores": df_high_scores}
+    return {key: server.attach_attributes(value, data)
+            for key, value in results.items()}
 
 
 def get_media(session, team, year, mod_since=None):
