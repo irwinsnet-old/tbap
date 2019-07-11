@@ -1,5 +1,7 @@
 Tests\__pycache__
 **auth.py
+.vscode
+.pytest_cache/
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template

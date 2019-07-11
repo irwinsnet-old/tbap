@@ -291,12 +291,12 @@ class JsonParseError(Exception):
 
 
 def attach_attributes(dframe, response, additional=None):
-    dframe.attr = {}
-    for key, val in response.items():
-        dframe.attr[key] = val
-    if isinstance(additional, dict):
-        for key, val in additional.items():
-            dframe.attr[key] = val
+    # dframe.attr = {}
+    # for key, val in response.items():
+    #     dframe.attr[key] = val
+    # if isinstance(additional, dict):
+    #     for key, val in additional.items():
+    #         dframe.attr[key] = val
     return dframe
 
 

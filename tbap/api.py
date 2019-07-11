@@ -414,7 +414,7 @@ def get_district_rankings(session, district, mod_since=None):
     results = df.loc[:, ["rank", "team_key", "point_total", "rookie_bonus",
                          "event_key", "district_cmp", "total", "qual_points",
                          "alliance_points", "elim_points", "award_points"]]
-    results.attr = df.attr
+    # results.attr = df.attr
     return results
 
 
